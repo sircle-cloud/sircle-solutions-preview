@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sircle Solutions — Custom Software Development</title>
+  <meta name="description" content="Wij bouwen slimme software: portals, dashboards, boekingssystemen, web apps en WordPress plugins. Onderdeel van de Sircle Group.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sircle Solutions — Custom Software Development">
+  <meta property="og:description" content="Wij bouwen slimme software die jouw bedrijf laat groeien.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <!-- Noise overlay -->
+  <div class="noise"></div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-icon">&lt;S/&gt;</span>
+        <span class="nav__logo-text">Sircle Solutions</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="#services">Diensten</a>
+        <a href="#process">Werkwijze</a>
+        <a href="#case">Portfolio</a>
+        <a href="#tech">Tech Stack</a>
+        <a href="#about">Over Ons</a>
+      </div>
+      <a href="#contact" class="nav__cta">Start een project →</a>
+      <button class="nav__burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__grid-bg"></div>
+    <div class="hero__particles" id="particles"></div>
+    <div class="hero__container">
+      <div class="hero__badge" data-animate="fade-up">
+        <span class="hero__badge-dot"></span>
+        Onderdeel van de Sircle Group
+      </div>
+      <h1 class="hero__title" data-animate="fade-up" data-delay="0.1">
+        Software die<br>
+        <span class="hero__title-gradient">problemen oplost.</span>
+      </h1>
+      <p class="hero__sub" data-animate="fade-up" data-delay="0.2">
+        Wij bouwen custom portals, dashboards, boekingssystemen en web apps.<br>
+        Geen templates. Geen compromissen. Gebouwd voor jouw uitdaging.
+      </p>
+      <div class="hero__actions" data-animate="fade-up" data-delay="0.3">
+        <a href="#contact" class="btn btn--primary btn--glow">
+          Plan een gesprek
+          <span class="btn__arrow">→</span>
+        </a>
+        <a href="#services" class="btn btn--ghost">
+          Bekijk wat we bouwen
+        </a>
+      </div>
+      <!-- Terminal typing effect -->
+      <div class="hero__terminal" data-animate="fade-up" data-delay="0.4">
+        <div class="terminal">
+          <div class="terminal__bar">
+            <div class="terminal__dots">
+              <span style="background:#ff5f57"></span>
+              <span style="background:#ffbd2e"></span>
+              <span style="background:#28c840"></span>
+            </div>
+            <span class="terminal__title">sircle-solutions — zsh</span>
+          </div>
+          <div class="terminal__body">
+            <div class="terminal__line">
+              <span class="terminal__prompt">$</span>
+              <span class="terminal__text" id="terminalText"></span>
+              <span class="terminal__cursor">█</span>
+            </div>
+            <div class="terminal__output" id="terminalOutput"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROBLEM ═══════════ -->
+  <section class="section section--dark" id="problem">
+    <div class="container">
+      <div class="section__label" data-animate="fade-up">Het probleem</div>
+      <h2 class="section__title section__title--large" data-animate="fade-up">
+        Je groeit sneller dan<br>je <span class="text-gradient">tools aankunnen.</span>
+      </h2>
+      <div class="problems-grid" data-animate="fade-up" data-delay="0.1">
+        <div class="problem-card">
+          <div class="problem-card__icon">📊</div>
+          <h3>Spreadsheet chaos</h3>
+          <p>Excel is geen database. Toch draait je hele operatie erop. Data raakt kwijt, versies conflicteren, en niemand heeft het overzicht.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__icon">🔧</div>
+          <h3>Tools die niet passen</h3>
+          <p>Je betaalt voor 10 SaaS-tools die elk 20% doen van wat je nodig hebt. Integraties bestaan niet, en je workflow is een lappendeken.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__icon">⏳</div>
+          <h3>Tijd verloren aan handwerk</h3>
+          <p>Je team kopieert data, mailt bestanden rond, en doet handmatig wat software in seconden kan. Elke dag opnieuw.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SERVICES ═══════════ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section__label" data-animate="fade-up">Wat we bouwen</div>
+      <h2 class="section__title" data-animate="fade-up">
+        Custom software voor<br><span class="text-gradient">elke uitdaging.</span>
+      </h2>
+      <div class="services-grid">
+        <div class="service-card" data-animate="fade-up" data-delay="0.0">
+          <div class="service-card__glow"></div>
+          <div class="service-card__icon">🖥️</div>
+          <h3 class="service-card__title">Web Applicaties</h3>
+          <p class="service-card__desc">Full-stack web apps gebouwd op moderne frameworks. Van interne tools tot klantgerichte platforms.</p>
+          <div class="service-card__tags">
+            <span>React</span><span>Node.js</span><span>TypeScript</span>
+          </div>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="0.05">
+          <div class="service-card__glow"></div>
+          <div class="service-card__icon">📊</div>
+          <h3 class="service-card__title">Dashboards & Portals</h3>
+          <p class="service-card__desc">Real-time dashboards en klantportals die data omzetten in inzicht. Met drag & drop, filters en exports.</p>
+          <div class="service-card__tags">
+            <span>Real-time</span><span>Analytics</span><span>API's</span>
+          </div>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="0.1">
+          <div class="service-card__glow"></div>
+          <div class="service-card__icon">📅</div>
+          <h3 class="service-card__title">Boekingssystemen</h3>
+          <p class="service-card__desc">Slimme planning en reserveringssystemen. Automatische bevestigingen, betalingen en kalender sync.</p>
+          <div class="service-card__tags">
+            <span>Stripe</span><span>Calendar</span><span>Automations</span>
+          </div>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="0.15">
+          <div class="service-card__glow"></div>
+          <div class="service-card__icon">🗄️</div>
+          <h3 class="service-card__title">Database Systemen</h3>
+          <p class="service-card__desc">Op maat gemaakte CRM's, inventarissystemen en data management. Jouw data, jouw structuur, jouw regels.</p>
+          <div class="service-card__tags">
+            <span>PostgreSQL</span><span>SQLite</span><span>API</span>
+          </div>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="0.2">
+          <div class="service-card__glow"></div>
+          <div class="service-card__icon">🔌</div>
+          <h3 class="service-card__title">WordPress Plugins</h3>
+          <p class="service-card__desc">Custom WP plugins die naadloos integreren met je bestaande site. Van formulieren tot complexe workflows.</p>
+          <div class="service-card__tags">
+            <span>PHP</span><span>WordPress</span><span>WooCommerce</span>
+          </div>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="0.25">
+          <div class="service-card__glow"></div>
+          <div class="service-card__icon">🤖</div>
+          <h3 class="service-card__title">AI & Automatisering</h3>
+          <p class="service-card__desc">Slimme automatiseringen powered by AI. Van chatbots tot document processing en predictive analytics.</p>
+          <div class="service-card__tags">
+            <span>OpenAI</span><span>Python</span><span>Workflows</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROCESS ═══════════ -->
+  <section class="section section--dark" id="process">
+    <div class="container">
+      <div class="section__label" data-animate="fade-up">Hoe we werken</div>
+      <h2 class="section__title" data-animate="fade-up">
+        Van idee tot<br><span class="text-gradient">lancering in weken.</span>
+      </h2>
+      <div class="process-timeline">
+        <div class="process-line" id="processLine"></div>
+        <div class="process-step" data-animate="fade-up" data-delay="0.0">
+          <div class="process-step__number">01</div>
+          <div class="process-step__content">
+            <h3>Discovery & Intake</h3>
+            <p>We luisteren naar je uitdaging, analyseren je processen en definiëren samen de scope. Geen technisch jargon — gewoon heldere afspraken.</p>
+          </div>
+        </div>
+        <div class="process-step" data-animate="fade-up" data-delay="0.1">
+          <div class="process-step__number">02</div>
+          <div class="process-step__content">
+            <h3>Design & Prototype</h3>
+            <p>Interactief prototype zodat je ziet wat je krijgt. Feedback loops tot het perfect is. Je test voordat er één regel code geschreven wordt.</p>
+          </div>
+        </div>
+        <div class="process-step" data-animate="fade-up" data-delay="0.2">
+          <div class="process-step__number">03</div>
+          <div class="process-step__content">
+            <h3>Build & Iterate</h3>
+            <p>Agile development in sprints van 2 weken. Je ziet voortgang, geeft feedback, en we bouwen door. Geen verrassingen bij oplevering.</p>
+          </div>
+        </div>
+        <div class="process-step" data-animate="fade-up" data-delay="0.3">
+          <div class="process-step__number">04</div>
+          <div class="process-step__content">
+            <h3>Launch & Support</h3>
+            <p>Go-live met monitoring, training en documentatie. Daarna doorlopende support en doorontwikkeling. We laten je niet vallen na launch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CASE STUDY ═══════════ -->
+  <section class="section" id="case">
+    <div class="container">
+      <div class="section__label" data-animate="fade-up">Case study</div>
+      <h2 class="section__title" data-animate="fade-up">
+        Gebouwd door<br><span class="text-gradient">Sircle Solutions.</span>
+      </h2>
+      <div class="case-card" data-animate="fade-up" data-delay="0.1">
+        <div class="case-card__visual">
+          <div class="case-card__mockup">
+            <div class="case-card__browser">
+              <div class="case-card__browser-bar">
+                <div class="case-card__browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="case-card__browser-url">portal.vlijttandartsen.nl</div>
+              </div>
+              <div class="case-card__browser-body">
+                <div class="case-mock">
+                  <div class="case-mock__sidebar">
+                    <div class="case-mock__sidebar-item active"></div>
+                    <div class="case-mock__sidebar-item"></div>
+                    <div class="case-mock__sidebar-item"></div>
+                    <div class="case-mock__sidebar-item"></div>
+                  </div>
+                  <div class="case-mock__main">
+                    <div class="case-mock__stats">
+                      <div class="case-mock__stat"></div>
+                      <div class="case-mock__stat"></div>
+                      <div class="case-mock__stat"></div>
+                      <div class="case-mock__stat"></div>
+                    </div>
+                    <div class="case-mock__pipeline">
+                      <div class="case-mock__col">
+                        <div class="case-mock__col-header" style="background:#3b82f6"></div>
+                        <div class="case-mock__card"></div>
+                        <div class="case-mock__card"></div>
+                        <div class="case-mock__card"></div>
+                      </div>
+                      <div class="case-mock__col">
+                        <div class="case-mock__col-header" style="background:#f59e0b"></div>
+                        <div class="case-mock__card"></div>
+                        <div class="case-mock__card"></div>
+                      </div>
+                      <div class="case-mock__col">
+                        <div class="case-mock__col-header" style="background:#8b5cf6"></div>
+                        <div class="case-mock__card"></div>
+                      </div>
+                      <div class="case-mock__col">
+                        <div class="case-mock__col-header" style="background:#10b981"></div>
+                        <div class="case-mock__card"></div>
+                        <div class="case-mock__card"></div>
+                        <div class="case-mock__card"></div>
+                        <div class="case-mock__card"></div>
+                      </div>
+                      <div class="case-mock__col">
+                        <div class="case-mock__col-header" style="background:#06b6d4"></div>
+                        <div class="case-mock__card"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-card__info">
+          <div class="case-card__badge">CRM Portal</div>
+          <h3 class="case-card__title">VLIJT Tandartsen</h3>
+          <p class="case-card__desc">
+            Een complete patiënt-pipeline voor een snelgroeiende tandartspraktijk. Van nieuwe aanmelding tot ingeplande patiënt — alles in één overzicht met drag & drop, real-time statistieken en automatische website-sync.
+          </p>
+          <div class="case-card__metrics">
+            <div class="case-card__metric">
+              <span class="case-card__metric-value">2.000+</span>
+              <span class="case-card__metric-label">Patiënten</span>
+            </div>
+            <div class="case-card__metric">
+              <span class="case-card__metric-value">5</span>
+              <span class="case-card__metric-label">Pipeline fases</span>
+            </div>
+            <div class="case-card__metric">
+              <span class="case-card__metric-value">2 weken</span>
+              <span class="case-card__metric-label">Doorlooptijd</span>
+            </div>
+          </div>
+          <div class="case-card__stack">
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>SQLite</span>
+            <span>Vanilla JS</span>
+            <span>Cloudflare</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TECH STACK ═══════════ -->
+  <section class="section section--dark" id="tech">
+    <div class="container">
+      <div class="section__label" data-animate="fade-up">Tech Stack</div>
+      <h2 class="section__title" data-animate="fade-up">
+        Modern. Betrouwbaar.<br><span class="text-gradient">Schaalbaar.</span>
+      </h2>
+      <p class="section__sub" data-animate="fade-up">We kiezen de beste technologie voor jouw project — niet andersom.</p>
+      <div class="tech-grid" data-animate="fade-up">
+        <div class="tech-category">
+          <h4 class="tech-category__title">Frontend</h4>
+          <div class="tech-logos">
+            <div class="tech-logo"><span>⚛️</span><small>React</small></div>
+            <div class="tech-logo"><span>🟢</span><small>Vue.js</small></div>
+            <div class="tech-logo"><span>▲</span><small>Next.js</small></div>
+            <div class="tech-logo"><span>🔷</span><small>TypeScript</small></div>
+            <div class="tech-logo"><span>💨</span><small>Tailwind</small></div>
+          </div>
+        </div>
+        <div class="tech-category">
+          <h4 class="tech-category__title">Backend</h4>
+          <div class="tech-logos">
+            <div class="tech-logo"><span>🟩</span><small>Node.js</small></div>
+            <div class="tech-logo"><span>🐍</span><small>Python</small></div>
+            <div class="tech-logo"><span>🚀</span><small>Express</small></div>
+            <div class="tech-logo"><span>⚡</span><small>FastAPI</small></div>
+            <div class="tech-logo"><span>🔥</span><small>Firebase</small></div>
+          </div>
+        </div>
+        <div class="tech-category">
+          <h4 class="tech-category__title">Database</h4>
+          <div class="tech-logos">
+            <div class="tech-logo"><span>🐘</span><small>PostgreSQL</small></div>
+            <div class="tech-logo"><span>🍃</span><small>MongoDB</small></div>
+            <div class="tech-logo"><span>⚡</span><small>Supabase</small></div>
+            <div class="tech-logo"><span>🗄️</span><small>SQLite</small></div>
+            <div class="tech-logo"><span>🔴</span><small>Redis</small></div>
+          </div>
+        </div>
+        <div class="tech-category">
+          <h4 class="tech-category__title">Cloud & DevOps</h4>
+          <div class="tech-logos">
+            <div class="tech-logo"><span>☁️</span><small>AWS</small></div>
+            <div class="tech-logo"><span>🌐</span><small>Cloudflare</small></div>
+            <div class="tech-logo"><span>🐳</span><small>Docker</small></div>
+            <div class="tech-logo"><span>▲</span><small>Vercel</small></div>
+            <div class="tech-logo"><span>🔄</span><small>GitHub</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT / SIRCLE GROUP ═══════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__label" data-animate="fade-up">De Sircle Group</div>
+      <h2 class="section__title" data-animate="fade-up">
+        Drie bedrijven.<br><span class="text-gradient">Eén ecosysteem.</span>
+      </h2>
+      <div class="group-grid">
+        <div class="group-card" data-animate="fade-up" data-delay="0.0">
+          <div class="group-card__logo">🎨</div>
+          <h3 class="group-card__title">Sircle Agency</h3>
+          <p class="group-card__sub">sircle.agency</p>
+          <p class="group-card__desc">Strategie, branding, film & design. Wij bouwen merken die opvallen en blijven hangen.</p>
+          <div class="group-card__tag">Creative</div>
+        </div>
+        <div class="group-card group-card--active" data-animate="fade-up" data-delay="0.1">
+          <div class="group-card__logo">&lt;S/&gt;</div>
+          <h3 class="group-card__title">Sircle Solutions</h3>
+          <p class="group-card__sub">sircle.tech</p>
+          <p class="group-card__desc">Custom software, portals, apps & automatisering. Slimme oplossingen voor complexe problemen.</p>
+          <div class="group-card__tag">Software</div>
+        </div>
+        <div class="group-card" data-animate="fade-up" data-delay="0.2">
+          <div class="group-card__logo">👨‍💻</div>
+          <h3 class="group-card__title">Sircle.dev</h3>
+          <p class="group-card__sub">sircle.dev</p>
+          <p class="group-card__desc">Developer teams on demand. Schaal je tech team op in weken, niet maanden.</p>
+          <div class="group-card__tag">Development</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA ═══════════ -->
+  <section class="section section--cta" id="contact">
+    <div class="container">
+      <div class="cta-content" data-animate="fade-up">
+        <h2 class="cta__title">Klaar om te bouwen?</h2>
+        <p class="cta__sub">Vertel ons je uitdaging. We denken mee — vrijblijvend.</p>
+        <div class="cta__actions">
+          <a href="mailto:hello@sircle.tech" class="btn btn--primary btn--large btn--glow">
+            hello@sircle.tech
+            <span class="btn__arrow">→</span>
+          </a>
+          <a href="tel:+31852129145" class="btn btn--ghost btn--large">
+            +31 85 212 91 45
+          </a>
+        </div>
+        <p class="cta__note">Of plan direct een <a href="#">videocall van 30 minuten</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">&lt;S/&gt; Sircle Solutions</div>
+          <p>Custom software development.<br>Onderdeel van de Sircle Group.</p>
+          <p class="footer__address">Zwaardstraat 16, 2584 TX Den Haag</p>
+        </div>
+        <div class="footer__col">
+          <h4>Diensten</h4>
+          <a href="#services">Web Applicaties</a>
+          <a href="#services">Dashboards & Portals</a>
+          <a href="#services">Boekingssystemen</a>
+          <a href="#services">WordPress Plugins</a>
+          <a href="#services">AI & Automatisering</a>
+        </div>
+        <div class="footer__col">
+          <h4>Sircle Group</h4>
+          <a href="https://sircle.agency" target="_blank">Sircle Agency</a>
+          <a href="https://sircle.dev" target="_blank">Sircle.dev</a>
+          <a href="#">Sircle Solutions</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@sircle.tech">hello@sircle.tech</a>
+          <a href="tel:+31852129145">+31 85 212 91 45</a>
+          <a href="https://linkedin.com/company/sirclecreative" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Sircle Solutions — KvK 86074016</p>
+        <p>Made with 💙 in Den Haag</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
