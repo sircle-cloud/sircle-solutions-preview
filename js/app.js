@@ -178,6 +178,39 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     }
   );
 
+  // Case grid cards stagger animation
+  gsap.fromTo('.case-grid__card',
+    { opacity: 0, y: 60, scale: 0.95 },
+    {
+      opacity: 1, y: 0, scale: 1,
+      duration: 0.7,
+      stagger: 0.12,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.case-grid', start: 'top 80%', once: true }
+    }
+  );
+
+  // Animate mockup elements inside each case card
+  document.querySelectorAll('.case-grid__card').forEach((card, idx) => {
+    const mockElements = card.querySelectorAll('.case-mock__card, .case-mock__bento-stat, .case-mock__bento-card, .case-mock__wizard-field, .case-mock__wizard-textarea, .case-mock__shop-product');
+    if (mockElements.length) {
+      gsap.fromTo(mockElements,
+        { opacity: 0, x: -8 },
+        {
+          opacity: 1, x: 0,
+          duration: 0.35,
+          stagger: 0.04,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 75%',
+            once: true
+          }
+        }
+      );
+    }
+  });
+
   // Tech logos float
   gsap.fromTo('.tech-logo',
     { opacity: 0, y: 20 },
@@ -199,18 +232,6 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       stagger: 0.12,
       ease: 'power3.out',
       scrollTrigger: { trigger: '.group-grid', start: 'top 80%', once: true }
-    }
-  );
-
-  // Case card mockup — animate pipeline cards
-  gsap.fromTo('.case-mock__card',
-    { opacity: 0, x: -10 },
-    {
-      opacity: 1, x: 0,
-      duration: 0.4,
-      stagger: 0.05,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.case-card', start: 'top 75%', once: true }
     }
   );
 
@@ -268,4 +289,4 @@ document.querySelectorAll('.service-card').forEach(card => {
 
 // ── Log ─────────────────────────────────────────────────
 console.log('%c<S/> Sircle Solutions', 'font-size:20px;font-weight:bold;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;');
-console.log('%cBuilt with 💙 in Den Haag', 'color:#64748b;font-size:12px;');
+console.log('%cBuilt with ♥ in Den Haag', 'color:#64748b;font-size:12px;');
