@@ -296,10 +296,8 @@ if (openModalBtn && contactModal) {
   openModalBtn.addEventListener('click', () => {
     console.log('Opening contact modal...');
     contactModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    // Force visibility for debugging
     contactModal.style.display = 'flex';
-    contactModal.style.zIndex = '99999';
+    document.body.style.overflow = 'hidden';
   });
 }
 
@@ -307,6 +305,7 @@ if (closeModalBtn && contactModal) {
   closeModalBtn.addEventListener('click', () => {
     console.log('Closing contact modal...');
     contactModal.classList.remove('active');
+    contactModal.style.display = 'none';
     document.body.style.overflow = '';
   });
 }
@@ -314,8 +313,9 @@ if (closeModalBtn && contactModal) {
 // Close modal when clicking backdrop
 if (contactModal) {
   contactModal.addEventListener('click', (e) => {
-    if (e.target === contactModal || e.target.classList.contains('modal__backdrop')) {
+    if (e.target === contactModal) {
       contactModal.classList.remove('active');
+      contactModal.style.display = 'none';
       document.body.style.overflow = '';
     }
   });
@@ -325,6 +325,7 @@ if (contactModal) {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && contactModal?.classList.contains('active')) {
     contactModal.classList.remove('active');
+    contactModal.style.display = 'none';
     document.body.style.overflow = '';
   }
 });
