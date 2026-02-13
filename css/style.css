@@ -433,6 +433,8 @@ img { max-width: 100%; display: block; }
    TECH STACK
    ══════════════════════════════════════════════════════════ */
 .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.tech-grid .tech-category:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.tech-grid .tech-category:last-child:nth-child(odd) .tech-logos { justify-content: center; }
 .tech-category {
   background: rgba(255,255,255,0.02); border: 1px solid var(--border);
   border-radius: var(--radius-lg); padding: 24px;
