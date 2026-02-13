@@ -287,6 +287,43 @@ document.querySelectorAll('.service-card').forEach(card => {
   });
 });
 
+// ── Modal functionality ────────────────────────────────
+const contactModal = document.getElementById('contactModal');
+const openModalBtn = document.getElementById('openContactModal');
+const closeModalBtn = document.getElementById('closeContactModal');
+
+if (openModalBtn && contactModal) {
+  openModalBtn.addEventListener('click', () => {
+    contactModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+if (closeModalBtn && contactModal) {
+  closeModalBtn.addEventListener('click', () => {
+    contactModal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+}
+
+// Close modal when clicking backdrop
+if (contactModal) {
+  contactModal.addEventListener('click', (e) => {
+    if (e.target === contactModal || e.target.classList.contains('modal__backdrop')) {
+      contactModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && contactModal?.classList.contains('active')) {
+    contactModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
 // ── Log ─────────────────────────────────────────────────
 console.log('%c<S/> Sircle Solutions', 'font-size:20px;font-weight:bold;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;');
 console.log('%cBuilt with ♥ in Den Haag', 'color:#64748b;font-size:12px;');

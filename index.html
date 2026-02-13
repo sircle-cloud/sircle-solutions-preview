@@ -562,48 +562,22 @@
     </div>
   </section>
 
-  <!-- ═══════════ CONTACT ═══════════ -->
+  <!-- ═══════════ CTA ═══════════ -->
   <section class="section section--cta" id="contact">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact__content" data-animate="fade-up">
-          <h2 class="cta__title">Klaar om te bouwen?</h2>
-          <p class="cta__sub">Vertel ons je uitdaging. We denken mee — vrijblijvend.</p>
-          <div class="contact__info">
-            <div class="contact__item">
-              <span class="contact__label">Email</span>
-              <a href="mailto:hello@sircle.dev" class="contact__link">hello@sircle.dev</a>
-            </div>
-            <div class="contact__item">
-              <span class="contact__label">Telefoon</span>
-              <a href="tel:+31852129145" class="contact__link">+31 85 212 91 45</a>
-            </div>
-          </div>
-        </div>
-        <form class="contact__form" data-animate="fade-up" action="https://formspree.io/f/xdkonpzl" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Naam *</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="company">Bedrijf</label>
-              <input type="text" id="company" name="company">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="project">Vertel ons over je project *</label>
-            <textarea id="project" name="project" rows="5" placeholder="Beschrijf je software uitdaging, doelen, timeline..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary btn--large btn--glow">
-            Verstuur bericht
+      <div class="cta-content" data-animate="fade-up">
+        <h2 class="cta__title">Klaar om te bouwen?</h2>
+        <p class="cta__sub">Vertel ons je uitdaging. We denken mee — vrijblijvend.</p>
+        <div class="cta__actions">
+          <button class="btn btn--primary btn--large btn--glow" id="openContactModal">
+            Start een project
             <span class="btn__arrow">→</span>
           </button>
-        </form>
+          <a href="mailto:hello@sircle.dev" class="btn btn--ghost btn--large">
+            hello@sircle.dev
+          </a>
+        </div>
+        <p class="cta__note">Of bel direct: <a href="tel:+31852129145">+31 85 212 91 45</a></p>
       </div>
     </div>
   </section>
@@ -645,6 +619,45 @@
       </div>
     </div>
   </footer>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <div class="modal__header">
+        <h3>Start een project</h3>
+        <button class="modal__close" id="closeContactModal">×</button>
+      </div>
+      <form class="modal__form" action="https://formspree.io/f/xdkonpzl" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-name">Naam *</label>
+            <input type="text" id="modal-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="modal-company">Organisatie</label>
+            <input type="text" id="modal-company" name="company">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="modal-email">Email *</label>
+          <input type="email" id="modal-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="modal-phone">Telefoonnummer</label>
+          <input type="tel" id="modal-phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="modal-challenge">Software uitdaging *</label>
+          <textarea id="modal-challenge" name="challenge" rows="4" placeholder="Beschrijf kort je software uitdaging, doelen en gewenste timeline..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--large btn--glow modal__submit">
+          Verstuur aanvraag
+          <span class="btn__arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
