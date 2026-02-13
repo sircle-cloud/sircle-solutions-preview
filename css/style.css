@@ -521,6 +521,102 @@ img { max-width: 100%; display: block; }
 [data-animate].visible { opacity: 1; transform: translateY(0); }
 
 /* ══════════════════════════════════════════════════════════
+   CONTACT FORM
+   ══════════════════════════════════════════════════════════ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact__info {
+  margin-top: 32px;
+}
+
+.contact__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.contact__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact__link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.contact__link:hover {
+  color: var(--primary);
+}
+
+.contact__form {
+  background: rgba(20, 25, 35, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(20px);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(10, 15, 25, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(10, 15, 25, 1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
@@ -546,6 +642,10 @@ img { max-width: 100%; display: block; }
   .footer__grid { grid-template-columns: 1fr; gap: 32px; }
   .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
   .process-step { gap: 16px; }
+  
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact__form { padding: 24px; }
 }
 @media (max-width: 480px) {
   .hero__title { font-size: 36px; }
