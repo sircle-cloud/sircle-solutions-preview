@@ -324,6 +324,54 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// Handle contact form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('modal-name').value;
+    const company = document.getElementById('modal-company').value;
+    const email = document.getElementById('modal-email').value;
+    const phone = document.getElementById('modal-phone').value;
+    const challenge = document.getElementById('modal-challenge').value;
+    
+    // Create email body
+    const subject = `Nieuwe software aanvraag van ${name}`;
+    const body = `Hoi Bas,
+
+Er is een nieuwe software aanvraag binnengekomen via Sircle Solutions:
+
+CONTACTGEGEVENS:
+Naam: ${name}
+${company ? `Organisatie: ${company}` : ''}
+Email: ${email}
+${phone ? `Telefoon: ${phone}` : ''}
+
+SOFTWARE UITDAGING:
+${challenge}
+
+---
+Verzonden via sirclesolutions.com`;
+
+    // Create mailto link
+    const mailtoLink = `mailto:hello@sircle.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Close modal and show success message
+    contactModal.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Reset form
+    contactForm.reset();
+    
+    // Optional: show success notification
+    alert('Je email client wordt geopend. Verzend de email om je aanvraag te versturen!');
+  });
+}
+
 // ── Log ─────────────────────────────────────────────────
 console.log('%c<S/> Sircle Solutions', 'font-size:20px;font-weight:bold;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;');
 console.log('%cBuilt with ♥ in Den Haag', 'color:#64748b;font-size:12px;');
