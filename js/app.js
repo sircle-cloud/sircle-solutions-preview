@@ -287,6 +287,47 @@ document.querySelectorAll('.service-card').forEach(card => {
   });
 });
 
+// ── Overlay menu functionality ─────────────────────────
+const navBurger = document.getElementById('navBurger');
+const overlayMenu = document.getElementById('overlayMenu');
+const overlayClose = document.getElementById('overlayClose');
+const overlayContactBtn = document.getElementById('overlayContactBtn');
+
+if (navBurger && overlayMenu) {
+  navBurger.addEventListener('click', () => {
+    overlayMenu.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+if (overlayClose && overlayMenu) {
+  overlayClose.addEventListener('click', () => {
+    overlayMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+}
+
+// Close overlay menu when clicking on a nav link
+document.querySelectorAll('.overlay-menu__link').forEach(link => {
+  link.addEventListener('click', () => {
+    overlayMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+});
+
+// Overlay contact button opens main contact modal
+if (overlayContactBtn) {
+  overlayContactBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    overlayMenu.classList.remove('active');
+    document.body.style.overflow = 'hidden';
+    if (contactModal) {
+      contactModal.classList.add('active');
+      contactModal.style.display = 'flex';
+    }
+  });
+}
+
 // ── Modal functionality ────────────────────────────────
 const contactModal = document.getElementById('contactModal');
 const openModalBtn = document.getElementById('openContactModal');
