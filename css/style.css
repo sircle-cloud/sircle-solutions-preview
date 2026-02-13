@@ -140,25 +140,33 @@ img { max-width: 100%; display: block; }
   background: none; 
   border: none; 
   cursor: pointer; 
-  padding: 8px;
+  padding: 12px;
   position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  transition: background 0.3s ease;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .nav__burger:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: scale(1.05);
 }
 .nav__burger span { 
-  display: block; 
-  width: 24px; 
-  height: 2px; 
+  position: absolute;
+  left: 50%;
+  width: 18px;
+  height: 2px;
   background: var(--text); 
-  margin: 5px 0; 
   transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
   border-radius: 1px;
+  transform: translateX(-50%);
 }
+.nav__burger span:nth-child(1) { top: 14px; }
+.nav__burger span:nth-child(2) { top: 21px; }
+.nav__burger span:nth-child(3) { top: 28px; width: 14px; }
 
 /* ══════════════════════════════════════════════════════════
    HERO
@@ -661,35 +669,38 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   min-height: 75vh;
-  gap: 40px;
+  gap: 48px;
+  padding-left: 5%;
 }
 
 .overlay-menu__nav {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   width: 100%;
-  max-width: 600px;
 }
 
 .overlay-menu__link {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px 0;
+  justify-content: flex-start;
+  gap: 24px;
+  padding: 8px 0;
   text-decoration: none;
   transition: all 0.4s ease;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateX(-30px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  max-width: 400px;
 }
 
 .overlay-menu.active .overlay-menu__link {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .overlay-menu.active .overlay-menu__link:nth-child(1) { transition-delay: 0.1s; }
@@ -698,9 +709,15 @@ img { max-width: 100%; display: block; }
 .overlay-menu.active .overlay-menu__link:nth-child(4) { transition-delay: 0.25s; }
 .overlay-menu.active .overlay-menu__link:nth-child(5) { transition-delay: 0.3s; }
 
+.overlay-menu__link:hover {
+  border-color: var(--primary);
+}
 .overlay-menu__link:hover .overlay-menu__link-text {
   color: var(--primary);
   transform: translateX(8px);
+}
+.overlay-menu__link:hover .overlay-menu__link-number {
+  color: var(--primary);
 }
 
 .overlay-menu__link-number {
@@ -721,16 +738,20 @@ img { max-width: 100%; display: block; }
 .overlay-menu__cta {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  align-items: flex-start;
+  gap: 20px;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease 0.4s, transform 0.4s ease 0.4s;
+  transform: translateX(-30px);
+  transition: opacity 0.4s ease 0.5s, transform 0.4s ease 0.5s;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  max-width: 400px;
 }
 
 .overlay-menu.active .overlay-menu__cta {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .overlay-menu__contact-btn {
@@ -944,11 +965,11 @@ img { max-width: 100%; display: block; }
   .modal__header, .modal__form { padding-left: 24px; padding-right: 24px; }
   
   .overlay-menu__content { padding: 0 24px; }
-  .overlay-menu__main { gap: 30px; min-height: 70vh; }
-  .overlay-menu__nav { gap: 16px; }
-  .overlay-menu__cta { gap: 14px; }
+  .overlay-menu__main { gap: 32px; min-height: 70vh; padding-left: 0; }
+  .overlay-menu__nav { gap: 12px; }
+  .overlay-menu__cta { gap: 16px; padding-top: 20px; }
   .overlay-menu__link-text { font-size: clamp(18px, 5vw, 28px); }
-  .overlay-menu__link { padding: 8px 0; }
+  .overlay-menu__link { padding: 6px 0; max-width: 100%; }
   .overlay-menu__contact-btn { padding: 12px 20px; font-size: 15px; }
 }
 @media (max-width: 480px) {
