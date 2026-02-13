@@ -28,17 +28,7 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// ── Mobile Nav ──────────────────────────────────────────
-const burger = document.getElementById('navBurger');
-const navLinks = document.getElementById('navLinks');
-if (burger) {
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
-}
+// Old mobile nav removed - using overlay menu instead
 
 // ── Smooth Scroll ───────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

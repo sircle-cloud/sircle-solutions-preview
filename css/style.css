@@ -925,13 +925,6 @@ img { max-width: 100%; display: block; }
   .nav__links { display: none; }
   .nav__cta { display: none; }
   .nav__burger { display: block; }
-  .nav__links.open {
-    display: flex; flex-direction: column;
-    position: absolute; top: 100%; left: 0; right: 0;
-    background: rgba(6,8,13,0.95); backdrop-filter: blur(20px);
-    padding: 20px 24px; gap: 16px;
-    border-bottom: 1px solid var(--border);
-  }
   .section { padding: 80px 0; }
   .problems-grid, .services-grid, .group-grid { grid-template-columns: 1fr; }
   .tech-grid { grid-template-columns: 1fr; }
