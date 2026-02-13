@@ -114,6 +114,7 @@ img { max-width: 100%; display: block; }
   background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 .nav__links { display: flex; gap: 32px; }
+.overlay-menu.active ~ * .nav__links { display: none !important; }
 .nav__links a { font-size: 13.5px; color: var(--text-muted); font-weight: 500; transition: color 0.2s; }
 .nav__links a:hover { color: var(--white); }
 .nav__cta {
@@ -708,8 +709,9 @@ img { max-width: 100%; display: block; }
 
 .overlay-menu__cta {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 24px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s ease 0.4s, transform 0.4s ease 0.4s;
@@ -721,39 +723,59 @@ img { max-width: 100%; display: block; }
 }
 
 .overlay-menu__contact-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 12px;
   background: var(--primary);
   color: white;
-  padding: 16px 28px;
-  border-radius: 12px;
+  padding: 18px 32px;
+  border-radius: 16px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   transition: all 0.3s ease;
-  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
 }
 
 .overlay-menu__contact-btn:hover {
   background: #2563eb;
   transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
 }
 
-.overlay-menu__contact-btn span {
-  font-size: 18px;
+.overlay-menu__contact-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.overlay-menu__contact-btn:hover svg {
+  transform: scale(1.1);
 }
 
 .overlay-menu__phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: var(--text-muted);
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 8px;
 }
 
 .overlay-menu__phone:hover {
   color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.overlay-menu__phone svg {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-menu__phone:hover svg {
+  opacity: 1;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -894,7 +916,8 @@ img { max-width: 100%; display: block; }
   .footer__grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .nav__links { display: none; }
+  .nav__links { display: none !important; }
+  .nav__links.open { display: none !important; }
   .nav__cta { display: none; }
   .nav__burger { display: block; }
   .section { padding: 80px 0; }
@@ -911,12 +934,9 @@ img { max-width: 100%; display: block; }
   
   .overlay-menu__content { padding: 0 24px; }
   .overlay-menu__main { gap: 40px; min-height: 70vh; }
-  .overlay-menu__cta { 
-    flex-direction: column; 
-    gap: 20px; 
-    align-items: center;
-  }
+  .overlay-menu__cta { gap: 20px; }
   .overlay-menu__link-text { font-size: clamp(20px, 6vw, 36px); }
+  .overlay-menu__contact-btn { padding: 16px 24px; font-size: 16px; }
 }
 @media (max-width: 480px) {
   .hero__title { font-size: 36px; }
