@@ -294,13 +294,18 @@ const closeModalBtn = document.getElementById('closeContactModal');
 
 if (openModalBtn && contactModal) {
   openModalBtn.addEventListener('click', () => {
+    console.log('Opening contact modal...');
     contactModal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    // Force visibility for debugging
+    contactModal.style.display = 'flex';
+    contactModal.style.zIndex = '99999';
   });
 }
 
 if (closeModalBtn && contactModal) {
   closeModalBtn.addEventListener('click', () => {
+    console.log('Closing contact modal...');
     contactModal.classList.remove('active');
     document.body.style.overflow = '';
   });
