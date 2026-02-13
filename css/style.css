@@ -525,9 +525,11 @@ img { max-width: 100%; display: block; }
    ══════════════════════════════════════════════════════════ */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
   align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact__info {
@@ -564,8 +566,9 @@ img { max-width: 100%; display: block; }
   background: rgba(20, 25, 35, 0.5);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 40px;
+  padding: 32px;
   backdrop-filter: blur(20px);
+  max-width: 100%;
 }
 
 .form-row {
@@ -643,9 +646,16 @@ img { max-width: 100%; display: block; }
   .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
   .process-step { gap: 16px; }
   
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-grid { 
+    grid-template-columns: 1fr; 
+    gap: 40px; 
+    max-width: 100%;
+  }
   .form-row { grid-template-columns: 1fr; }
-  .contact__form { padding: 24px; }
+  .contact__form { 
+    padding: 24px;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 480px) {
   .hero__title { font-size: 36px; }
