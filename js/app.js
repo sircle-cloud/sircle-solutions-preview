@@ -282,9 +282,27 @@ const navBurger = document.getElementById('navBurger');
 const overlayMenu = document.getElementById('overlayMenu');
 const overlayClose = document.getElementById('overlayClose');
 const overlayContactBtn = document.getElementById('overlayContactBtn');
+const navLinks = document.getElementById('navLinks');
+
+// Disable any old nav functionality
+if (navLinks) {
+  navLinks.classList.remove('open', 'active', 'show', 'visible');
+  navLinks.style.display = 'none';
+}
 
 if (navBurger && overlayMenu) {
-  navBurger.addEventListener('click', () => {
+  // Remove any old event listeners
+  navBurger.replaceWith(navBurger.cloneNode(true));
+  const newNavBurger = document.getElementById('navBurger');
+  
+  newNavBurger.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Force hide old nav
+    if (navLinks) navLinks.style.display = 'none';
+    
+    // Open overlay menu
     overlayMenu.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
