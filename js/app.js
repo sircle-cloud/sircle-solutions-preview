@@ -294,7 +294,6 @@ const closeModalBtn = document.getElementById('closeContactModal');
 
 if (openModalBtn && contactModal) {
   openModalBtn.addEventListener('click', () => {
-    console.log('Opening contact modal...');
     contactModal.classList.add('active');
     contactModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -303,7 +302,6 @@ if (openModalBtn && contactModal) {
 
 if (closeModalBtn && contactModal) {
   closeModalBtn.addEventListener('click', () => {
-    console.log('Closing contact modal...');
     contactModal.classList.remove('active');
     contactModal.style.display = 'none';
     document.body.style.overflow = '';
@@ -372,12 +370,7 @@ Verzonden via sirclesolutions.com`;
     
     // Reset form
     contactForm.reset();
-    
-    // Optional: show success notification
-    alert('Je email client wordt geopend. Verzend de email om je aanvraag te versturen!');
   });
 }
 
-// ── Log ─────────────────────────────────────────────────
-console.log('%c<S/> Sircle Solutions', 'font-size:20px;font-weight:bold;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;');
-console.log('%cBuilt with ♥ in Den Haag', 'color:#64748b;font-size:12px;');
+// ── Application loaded ─────────────────────────────────
