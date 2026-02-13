@@ -663,14 +663,14 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 80vh;
-  gap: 60px;
+  min-height: 75vh;
+  gap: 40px;
 }
 
 .overlay-menu__nav {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
   width: 100%;
   max-width: 600px;
 }
@@ -679,8 +679,8 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  padding: 16px 0;
+  gap: 20px;
+  padding: 10px 0;
   text-decoration: none;
   transition: all 0.4s ease;
   opacity: 0;
@@ -711,18 +711,18 @@ img { max-width: 100%; display: block; }
 }
 
 .overlay-menu__link-text {
-  font-size: clamp(24px, 4vw, 48px);
+  font-size: clamp(20px, 3.5vw, 36px);
   font-weight: 400;
   color: var(--text);
   transition: all 0.3s ease;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .overlay-menu__cta {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s ease 0.4s, transform 0.4s ease 0.4s;
@@ -736,13 +736,13 @@ img { max-width: 100%; display: block; }
 .overlay-menu__contact-btn {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background: var(--primary);
   color: white;
-  padding: 18px 32px;
-  border-radius: 16px;
+  padding: 14px 24px;
+  border-radius: 12px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
@@ -944,10 +944,12 @@ img { max-width: 100%; display: block; }
   .modal__header, .modal__form { padding-left: 24px; padding-right: 24px; }
   
   .overlay-menu__content { padding: 0 24px; }
-  .overlay-menu__main { gap: 40px; min-height: 70vh; }
-  .overlay-menu__cta { gap: 20px; }
-  .overlay-menu__link-text { font-size: clamp(20px, 6vw, 36px); }
-  .overlay-menu__contact-btn { padding: 16px 24px; font-size: 16px; }
+  .overlay-menu__main { gap: 30px; min-height: 70vh; }
+  .overlay-menu__nav { gap: 16px; }
+  .overlay-menu__cta { gap: 14px; }
+  .overlay-menu__link-text { font-size: clamp(18px, 5vw, 28px); }
+  .overlay-menu__link { padding: 8px 0; }
+  .overlay-menu__contact-btn { padding: 12px 20px; font-size: 15px; }
 }
 @media (max-width: 480px) {
   .hero__title { font-size: 36px; }
