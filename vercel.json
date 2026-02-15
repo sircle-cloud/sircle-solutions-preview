@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "sircle-solutions-staging",
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    }
+  ]
+}
