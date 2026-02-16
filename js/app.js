@@ -28,15 +28,61 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// ── Mobile Nav ──────────────────────────────────────────
-const burger = document.getElementById('navBurger');
+// ── Overlay Menu (fullscreen mobile) ────────────────────
+const navBurger = document.getElementById('navBurger');
+const overlayMenu = document.getElementById('overlayMenu');
+const overlayClose = document.getElementById('overlayClose');
+const overlayContactBtn = document.getElementById('overlayContactBtn');
 const navLinks = document.getElementById('navLinks');
-if (burger) {
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+
+// Disable any old nav functionality
+if (navLinks) {
+  navLinks.classList.remove('open', 'active', 'show', 'visible');
+  navLinks.style.display = 'none';
+}
+
+if (navBurger && overlayMenu) {
+  // Remove any old event listeners
+  navBurger.replaceWith(navBurger.cloneNode(true));
+  const newNavBurger = document.getElementById('navBurger');
+  
+  newNavBurger.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Force hide old nav
+    if (navLinks) navLinks.style.display = 'none';
+    
+    // Open overlay menu
+    overlayMenu.classList.add('active');
+    document.body.style.overflow = 'hidden';
   });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => navLinks.classList.remove('open'));
+}
+
+if (overlayClose && overlayMenu) {
+  overlayClose.addEventListener('click', () => {
+    overlayMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+}
+
+// Close overlay menu when clicking on a nav link
+document.querySelectorAll('.overlay-menu__link').forEach(link => {
+  link.addEventListener('click', () => {
+    overlayMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+});
+
+// Overlay contact button
+if (overlayContactBtn && overlayMenu) {
+  overlayContactBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    overlayMenu.classList.remove('active');
+    document.body.style.overflow = '';
+    // Scroll to contact section
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 }
 
