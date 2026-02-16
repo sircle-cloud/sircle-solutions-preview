@@ -25,3 +25,4 @@ Orange banner shows "🚧 STAGING ENVIRONMENT - Dit is de SIRCLE.DEV preview web
 
 ---
 **URGENCY RESOLVED** ⚡ Sebastiaan now has working staging with full styling!# Force GitHub Pages rebuild Sun Feb 15 14:17:19 CET 2026
+
