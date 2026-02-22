@@ -336,3 +336,58 @@ document.querySelectorAll('.service-card').forEach(card => {
 // ── Log ─────────────────────────────────────────────────
 console.log('%c<S/> Sircle Solutions', 'font-size:20px;font-weight:bold;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;');
 console.log('%cBuilt with ♥ in Den Haag', 'color:#64748b;font-size:12px;');
+
+// Project Popup
+const projectPopup = document.getElementById('projectPopup');
+const projectPopupOverlay = document.getElementById('projectPopupOverlay');
+const projectPopupClose = document.getElementById('projectPopupClose');
+
+function openProjectPopup() {
+  projectPopup.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeProjectPopup() {
+  projectPopup.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Hook up all CTA buttons
+document.querySelectorAll('.nav__cta, [href="#contact"], .overlay-menu__cta-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeOverlayMenu();
+    openProjectPopup();
+  });
+});
+
+// Hook up hero buttons
+document.querySelectorAll('.btn--primary').forEach(btn => {
+  if (btn.textContent.includes('gesprek') || btn.textContent.includes('project') || btn.textContent.includes('Start')) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openProjectPopup();
+    });
+  }
+});
+
+// Close popup
+if (projectPopupClose) projectPopupClose.addEventListener('click', closeProjectPopup);
+if (projectPopupOverlay) projectPopupOverlay.addEventListener('click', closeProjectPopup);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && projectPopup.classList.contains('active')) closeProjectPopup();
+});
+
+// Close overlay menu helper
+function closeOverlayMenu() {
+  const om = document.getElementById('overlayMenu');
+  if (om) om.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Thank you check
+if (window.location.search.includes('submitted=true')) {
+  const container = document.createElement('div');
+  container.innerHTML = '<div style="position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.8);backdrop-filter:blur(8px)"><div style="text-align:center;padding:40px"><div style="font-size:48px;margin-bottom:16px">🚀</div><h3 style="font-size:24px;font-weight:700;color:white;margin-bottom:8px">Bedankt!</h3><p style="color:#94a3b8;font-size:16px">We nemen binnen 24 uur contact met je op.</p><a href="/" style="display:inline-block;margin-top:24px;padding:10px 24px;background:#3b82f6;color:white;border-radius:10px;font-weight:600">Terug naar home</a></div></div>';
+  document.body.appendChild(container.firstChild);
+  history.replaceState(null, '', '/');
+}
