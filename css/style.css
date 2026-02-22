@@ -225,6 +225,11 @@ img { max-width: 100%; display: block; }
   border: none;
   cursor: pointer;
   padding: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 .overlay-menu__close span {
   position: absolute;
