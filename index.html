@@ -47,7 +47,7 @@
       --muted-dim:#6a776b;
       --hair:rgba(242,226,164,.13);
       --hair-soft:rgba(255,248,238,.07);
-      --max:1240px;
+      --max:100%;
       --display:"Schibsted Grotesk","Inter",system-ui,-apple-system,sans-serif;
       --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
       --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
@@ -69,8 +69,7 @@
     :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
     svg{display:block}
 
-    .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px}
-    @media(max-width:640px){.wrap{padding:0 20px}}
+    .wrap{width:100%;max-width:100%;margin:0 auto;padding:0 clamp(20px,4.5vw,80px)}
 
     .eyebrow{
       font-family:var(--mono);font-size:12px;font-weight:500;text-transform:uppercase;
@@ -151,7 +150,7 @@
     section{position:relative}
     .sec{padding:clamp(88px,12vh,140px) 0}
     .sec-head{max-width:64ch;margin-bottom:56px}
-    .sec-head h2{font-size:clamp(33px,5.2vw,66px);margin-top:20px;letter-spacing:-.04em}
+    .sec-head h2{font-size:clamp(33px,5.2vw,66px);margin-top:0;letter-spacing:-.04em}
     .sec-head p{margin-top:20px;max-width:52ch;color:var(--muted);font-size:clamp(15.5px,1.8vw,18px)}
     .divide{border-top:1px solid var(--hair)}
 
@@ -367,7 +366,6 @@
     <div class="hero-veil"></div>
     <div class="hero-inner">
       <div class="wrap">
-        <div class="hero-tag eyebrow">Onderdeel van de Sircle Group</div>
         <h1>Software die<br><span class="gold-text">problemen oplost.</span></h1>
         <p class="lede">Wij bouwen custom portals, dashboards, web apps en AI-chatbots. Geen templates. Geen compromissen. Gebouwd voor jóuw probleem.</p>
         <div class="hero-cta">
@@ -388,7 +386,6 @@
   <section class="sec divide">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Het probleem</span>
         <h2>Je groeit sneller dan<br>je tools <span class="dim">aankunnen.</span></h2>
       </div>
       <div class="grid3">
@@ -415,7 +412,6 @@
   <section class="sec divide" id="diensten">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Wat we bouwen</span>
         <h2>Custom software voor<br>elke uitdaging.</h2>
         <p>Van interne tools tot klantgerichte platforms — wij kiezen de bouwstenen die bij jouw probleem passen, niet andersom.</p>
       </div>
@@ -476,7 +472,6 @@
   <section class="sec divide" id="werkwijze">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Hoe we werken</span>
         <h2>Van idee tot<br>lancering in weken.</h2>
       </div>
       <div class="proc-grid">
@@ -508,7 +503,6 @@
   <section class="sec divide" id="portfolio">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Portfolio</span>
         <h2>Gebouwd door<br>Sircle Solutions.</h2>
       </div>
 
@@ -618,7 +612,6 @@
   <section class="sec divide" id="stack">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Tech Stack</span>
         <h2>Modern. Betrouwbaar. <span class="dim">Schaalbaar.</span></h2>
         <p>We kiezen de beste technologie voor jouw project — niet andersom.</p>
       </div>
@@ -636,7 +629,6 @@
   <section class="sec divide" id="group">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">De Sircle Group</span>
         <h2>Drie bedrijven.<br>Eén ecosysteem.</h2>
       </div>
       <div class="group-grid">
@@ -670,8 +662,7 @@
     <div class="wrap">
       <div class="contact-grid">
         <div class="reveal">
-          <span class="eyebrow">Klaar om te bouwen?</span>
-          <h2 style="margin-top:20px">Vertel ons je uitdaging.</h2>
+          <h2>Vertel ons je uitdaging.</h2>
           <p class="lede">We denken graag met je mee, vrijblijvend. Binnen 24 uur een reactie.</p>
           <div class="contact-direct">
             <a class="cd" href="mailto:hello@sircle.dev"><div class="ico"><svg><use href="#i-mail"/></svg></div><span class="txt">hello@sircle.dev<small>Mail ons direct</small></span></a>
