@@ -3,185 +3,447 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sircle Solutions — Custom Software Development</title>
-  <meta name="description" content="Wij bouwen slimme software: portals, dashboards, boekingssystemen, web apps en WordPress plugins. Onderdeel van de Sircle Group.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260222-2337">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <title>Sircle Solutions — Software die problemen oplost.</title>
+  <meta name="description" content="Wij bouwen custom portals, dashboards, web apps en AI-chatbots. Geen templates. Geen compromissen. Onderdeel van de Sircle Group.">
+  <meta name="theme-color" content="#050505">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Sircle Solutions — Custom Software Development">
-  <meta property="og:description" content="Wij bouwen slimme software die jouw bedrijf laat groeien.">
+  <meta property="og:title" content="Sircle Solutions — Software die problemen oplost.">
+  <meta property="og:description" content="Custom portals, dashboards, web apps en AI-chatbots. Geen templates. Geen compromissen.">
   <meta property="og:type" content="website">
-  <!-- Fathom - beautiful, simple website analytics -->
-  <script src="https://cdn.usefathom.com/script.js" data-site="ONXKQQZM" defer></script>
-  <!-- / Fathom -->
+  <meta property="og:url" content="https://sirclesolutions.com/">
+
+  <!-- Favicons -->
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="canonical" href="https://sirclesolutions.com/">
+
+  <!-- Fonts (GitHub Pages heeft geen CSP; in de artifact-preview vallen deze netjes terug op system fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --void:#050505;
+      --void-2:#0b0b0d;
+      --bone:#f4f4f5;
+      --ash:#8a8a92;
+      --ash-dim:#5c5c63;
+      --iris:#8052ff;
+      --iris-soft:#a385ff;
+      --saffron:#ffb829;
+      --verdant:#22a58a;
+      --magenta:#e85ac0;
+      --blue:#4a9eff;
+      --hair:rgba(255,255,255,.08);
+      --max:1280px;
+      --display:"Schibsted Grotesk","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+      --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+      --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      background:var(--void);
+      color:var(--bone);
+      font-family:var(--body);
+      font-weight:300;
+      line-height:1.6;
+      letter-spacing:.01em;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    ::selection{background:var(--iris);color:#fff}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    :focus-visible{outline:2px solid var(--iris-soft);outline-offset:3px;border-radius:4px}
+
+    .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px}
+    @media(max-width:640px){.wrap{padding:0 22px}}
+
+    .mono{font-family:var(--mono);font-weight:500;letter-spacing:.02em}
+    .eyebrow{
+      font-family:var(--mono);
+      font-size:12.5px;
+      font-weight:500;
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      color:var(--ash);
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+    }
+    .eyebrow::before{
+      content:"";
+      width:26px;height:1px;
+      background:var(--iris);
+      display:inline-block;
+    }
+
+    h1,h2,h3{
+      font-family:var(--display);
+      font-weight:500;
+      line-height:1.0;
+      letter-spacing:-0.04em;
+      text-wrap:balance;
+    }
+    .amber{color:var(--saffron)}
+    .irisc{color:var(--iris-soft)}
+    .dim{color:var(--ash)}
+
+    /* ---------- Buttons ---------- */
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      font-family:var(--mono);font-size:14px;font-weight:500;
+      letter-spacing:.02em;
+      padding:15px 26px;border-radius:999px;
+      transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s,color .25s,box-shadow .25s;
+      cursor:pointer;border:1px solid transparent;white-space:nowrap;
+    }
+    .btn .arw{transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+    .btn:hover .arw{transform:translateX(4px)}
+    .btn-primary{background:var(--iris);color:#fff;box-shadow:0 0 0 0 rgba(128,82,255,.5)}
+    .btn-primary:hover{background:#8f66ff;transform:translateY(-2px);box-shadow:0 12px 40px -8px rgba(128,82,255,.6)}
+    .btn-ghost{background:transparent;color:var(--bone);border-color:var(--hair)}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.35);transform:translateY(-2px)}
+
+    /* ---------- Nav ---------- */
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      transition:background .3s,backdrop-filter .3s,border-color .3s;
+      border-bottom:1px solid transparent;
+    }
+    header.scrolled{
+      background:rgba(5,5,6,.72);
+      backdrop-filter:blur(18px) saturate(140%);
+      -webkit-backdrop-filter:blur(18px) saturate(140%);
+      border-bottom:1px solid var(--hair);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.02em}
+    .glyph{
+      font-family:var(--mono);font-weight:600;font-size:15px;
+      color:var(--iris-soft);
+      border:1px solid var(--hair);border-radius:9px;
+      padding:5px 8px;line-height:1;background:rgba(128,82,255,.06);
+    }
+    .nav-links{display:flex;align-items:center;gap:34px}
+    .nav-links a{
+      font-family:var(--mono);font-size:13px;font-weight:500;
+      text-transform:uppercase;letter-spacing:.12em;color:var(--ash);
+      transition:color .2s;position:relative;
+    }
+    .nav-links a:hover{color:var(--bone)}
+    .nav-right{display:flex;align-items:center;gap:20px}
+    .menu-btn{display:none;background:none;border:none;color:var(--bone);cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+    .menu-btn span{width:22px;height:1.5px;background:var(--bone);transition:.3s;display:block}
+    .menu-btn.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    .menu-btn.open span:nth-child(2){opacity:0}
+    .menu-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+    @media(max-width:940px){
+      .nav-links,.nav-right .btn{display:none}
+      .menu-btn{display:flex}
+    }
+
+    /* mobile drawer */
+    .drawer{
+      position:fixed;inset:0;z-index:99;
+      background:rgba(5,5,6,.97);backdrop-filter:blur(20px);
+      display:flex;flex-direction:column;justify-content:center;gap:8px;
+      padding:0 32px;
+      opacity:0;pointer-events:none;transition:opacity .35s;
+    }
+    .drawer.open{opacity:1;pointer-events:auto}
+    .drawer a{
+      font-family:var(--display);font-size:clamp(30px,9vw,46px);font-weight:500;
+      letter-spacing:-.03em;color:var(--bone);
+      display:flex;align-items:baseline;gap:16px;padding:8px 0;
+      border-bottom:1px solid var(--hair);
+    }
+    .drawer a .n{font-family:var(--mono);font-size:13px;color:var(--iris-soft);font-weight:500}
+    .drawer .btn{margin-top:30px;justify-content:center}
+
+    /* ---------- Hero ---------- */
+    .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+    #constellation{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+    .hero-veil{
+      position:absolute;inset:0;z-index:1;pointer-events:none;
+      background:
+        radial-gradient(120% 90% at 82% 42%, transparent 30%, rgba(5,5,6,.55) 78%, var(--void) 100%),
+        linear-gradient(90deg, var(--void) 0%, rgba(5,5,6,.55) 34%, transparent 62%);
+    }
+    .hero-inner{position:relative;z-index:2;width:100%}
+    .hero-tag{margin-bottom:30px}
+    .hero h1{
+      font-size:clamp(48px,8.4vw,118px);
+      font-weight:500;
+      letter-spacing:-.045em;
+      line-height:.94;
+      max-width:14ch;
+    }
+    .hero h1 .l2{color:var(--iris-soft)}
+    .hero p.lede{
+      margin-top:32px;max-width:44ch;
+      font-size:clamp(17px,2.1vw,21px);
+      font-weight:300;color:#cfcfd4;line-height:1.55;
+    }
+    .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
+    .hero-meta{
+      display:flex;flex-wrap:wrap;gap:26px;margin-top:56px;
+      font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--ash-dim);
+    }
+    .hero-meta b{color:var(--ash);font-weight:500}
+    .scrollcue{
+      position:absolute;left:32px;bottom:26px;z-index:2;
+      font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-transform:uppercase;
+      color:var(--ash-dim);display:flex;align-items:center;gap:10px;
+    }
+    .scrollcue .bar{width:1px;height:34px;background:linear-gradient(var(--iris),transparent);display:block;animation:cue 2.2s ease-in-out infinite}
+    @keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top;opacity:.5}50%{transform:scaleY(1);opacity:1}}
+    @media(max-width:640px){.scrollcue{display:none}}
+
+    /* ---------- Section scaffolding ---------- */
+    section{position:relative}
+    .sec{padding:clamp(90px,13vh,150px) 0}
+    .sec-head{max-width:70ch;margin-bottom:64px}
+    .sec-head h2{
+      font-size:clamp(34px,5.4vw,72px);
+      margin-top:22px;letter-spacing:-.045em;
+    }
+    .sec-head p{margin-top:22px;max-width:52ch;color:var(--ash);font-size:clamp(16px,1.9vw,19px);font-weight:300}
+
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+
+    /* ---------- Problem ---------- */
+    .problem{border-top:1px solid var(--hair)}
+    .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--hair);border:1px solid var(--hair);border-radius:24px;overflow:hidden}
+    .prob-cell{background:var(--void);padding:44px 38px;min-height:270px;display:flex;flex-direction:column;transition:background .4s}
+    .prob-cell:hover{background:var(--void-2)}
+    .prob-cell .idx{font-family:var(--mono);font-size:12px;color:var(--iris-soft);letter-spacing:.1em}
+    .prob-cell h3{font-size:23px;margin-top:auto;font-weight:600;letter-spacing:-.02em}
+    .prob-cell p{margin-top:14px;color:var(--ash);font-size:15px;font-weight:300;line-height:1.6}
+    @media(max-width:860px){.prob-grid{grid-template-columns:1fr}.prob-cell{min-height:auto}}
+
+    /* ---------- Services ---------- */
+    .svc-list{display:flex;flex-direction:column;border-top:1px solid var(--hair)}
+    .svc{
+      display:grid;grid-template-columns:80px 1fr auto;gap:30px;align-items:center;
+      padding:34px 8px;border-bottom:1px solid var(--hair);
+      transition:padding .35s,background .35s;cursor:default;position:relative;
+    }
+    .svc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--iris);transform:scaleY(0);transform-origin:top;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+    .svc:hover{padding-left:26px;background:linear-gradient(90deg,rgba(128,82,255,.05),transparent 60%)}
+    .svc:hover::before{transform:scaleY(1)}
+    .svc .num{font-family:var(--mono);font-size:13px;color:var(--ash-dim)}
+    .svc .body h3{font-size:clamp(22px,3vw,32px);font-weight:500;letter-spacing:-.03em}
+    .svc .body p{margin-top:8px;color:var(--ash);font-size:15px;font-weight:300;max-width:60ch}
+    .svc .tags{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end;max-width:250px}
+    .tag{font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--ash);border:1px solid var(--hair);border-radius:999px;padding:5px 11px;white-space:nowrap}
+    @media(max-width:860px){
+      .svc{grid-template-columns:auto 1fr;gap:16px 18px}
+      .svc .tags{grid-column:1/-1;justify-content:flex-start;max-width:none;margin-top:4px}
+    }
+
+    /* ---------- Process ---------- */
+    .proc{border-top:1px solid var(--hair)}
+    .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+    .step .rail{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+    .step .dot{width:10px;height:10px;border-radius:50%;background:var(--iris);box-shadow:0 0 16px var(--iris)}
+    .step .line{flex:1;height:1px;background:var(--hair)}
+    .step .st-num{font-family:var(--mono);font-size:12px;color:var(--iris-soft);letter-spacing:.12em}
+    .step h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-bottom:12px}
+    .step p{color:var(--ash);font-size:14.5px;font-weight:300;line-height:1.6}
+    @media(max-width:960px){.proc-grid{grid-template-columns:1fr 1fr;gap:44px 34px}}
+    @media(max-width:560px){.proc-grid{grid-template-columns:1fr}}
+
+    /* ---------- Portfolio ---------- */
+    .port{border-top:1px solid var(--hair)}
+    .proj{
+      display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+      padding:52px 0;border-bottom:1px solid var(--hair);
+    }
+    .proj:hover .proj-visual{border-color:rgba(128,82,255,.4)}
+    .proj-info .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--ash)}
+    .proj-info .kicker .status{color:var(--saffron)}
+    .proj-info h3{font-size:clamp(30px,4.6vw,54px);font-weight:500;letter-spacing:-.04em;margin:18px 0}
+    .proj-info p{color:var(--ash);font-size:16px;font-weight:300;line-height:1.65;max-width:52ch}
+    .proj-stats{display:flex;gap:34px;margin-top:26px}
+    .proj-stats .s b{font-family:var(--display);font-size:26px;font-weight:600;letter-spacing:-.02em;color:var(--bone);display:block;line-height:1.1}
+    .proj-stats .s span{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ash-dim)}
+    .proj-tech{display:flex;flex-wrap:wrap;gap:7px;margin-top:26px}
+    .proj-visual{
+      position:relative;aspect-ratio:4/3;border:1px solid var(--hair);border-radius:22px;overflow:hidden;
+      background:radial-gradient(120% 120% at 20% 0%,rgba(128,82,255,.14),transparent 55%),var(--void-2);
+      transition:border-color .4s;
+    }
+    .proj-visual .mock{position:absolute;inset:0;display:flex;flex-direction:column}
+    .mock-bar{display:flex;align-items:center;gap:7px;padding:14px 16px;border-bottom:1px solid var(--hair)}
+    .mock-bar i{width:9px;height:9px;border-radius:50%;background:var(--ash-dim);display:block}
+    .mock-bar i:nth-child(1){background:#ff5f57}.mock-bar i:nth-child(2){background:#febc2e}.mock-bar i:nth-child(3){background:#28c840}
+    .mock-bar span{font-family:var(--mono);font-size:11px;color:var(--ash-dim);margin-left:8px}
+    .mock-body{flex:1;padding:20px;display:grid;gap:12px;grid-template-columns:1fr 1fr 1fr;align-content:start}
+    .mock-tile{background:rgba(255,255,255,.03);border:1px solid var(--hair);border-radius:12px;height:52px}
+    .mock-tile.wide{grid-column:1/-1;height:74px;background:linear-gradient(120deg,rgba(128,82,255,.12),rgba(255,255,255,.02))}
+    .mock-tile.tall{grid-row:span 2;height:auto}
+    @media(max-width:860px){.proj{grid-template-columns:1fr;gap:30px}.proj.rev .proj-visual{order:-1}}
+
+    /* ---------- Tech stack ---------- */
+    .tech{border-top:1px solid var(--hair)}
+    .tech-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--hair);border:1px solid var(--hair);border-radius:24px;overflow:hidden}
+    .tech-col{background:var(--void);padding:32px 26px;min-height:230px}
+    .tech-col h4{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--iris-soft);margin-bottom:22px}
+    .tech-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .tech-col li{font-size:15px;color:#cfcfd4;font-weight:300;transition:color .2s}
+    .tech-col li:hover{color:var(--bone)}
+    @media(max-width:960px){.tech-grid{grid-template-columns:repeat(2,1fr)}.tech-col{min-height:auto}}
+    @media(max-width:520px){.tech-grid{grid-template-columns:1fr}}
+
+    /* ---------- Sircle Group ---------- */
+    .group{border-top:1px solid var(--hair)}
+    .group-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .company{
+      border:1px solid var(--hair);border-radius:24px;padding:38px 32px;
+      display:flex;flex-direction:column;min-height:340px;
+      transition:border-color .4s,transform .4s,background .4s;
+    }
+    .company:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2)}
+    .company.mid{background:linear-gradient(180deg,rgba(128,82,255,.10),transparent 70%);border-color:rgba(128,82,255,.3)}
+    .company .role{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--saffron)}
+    .company h3{font-size:30px;font-weight:600;letter-spacing:-.03em;margin-top:20px}
+    .company .dom{font-family:var(--mono);font-size:13px;color:var(--ash);margin-top:6px}
+    .company p{color:var(--ash);font-size:15px;font-weight:300;line-height:1.6;margin-top:auto;padding-top:26px}
+    .company .go{margin-top:20px;font-family:var(--mono);font-size:13px;color:var(--iris-soft);display:inline-flex;gap:8px;align-items:center}
+    @media(max-width:860px){.group-grid{grid-template-columns:1fr}.company{min-height:auto}}
+
+    /* ---------- Contact ---------- */
+    .contact{border-top:1px solid var(--hair);position:relative;overflow:hidden}
+    .contact::after{content:"";position:absolute;left:50%;top:-30%;width:720px;height:720px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(128,82,255,.16),transparent 62%);pointer-events:none;z-index:0}
+    .contact .wrap{position:relative;z-index:1}
+    .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+    .contact h2{font-size:clamp(38px,6vw,80px);letter-spacing:-.05em}
+    .contact .lede{margin-top:24px;color:var(--ash);font-size:18px;font-weight:300;max-width:40ch}
+    .contact-direct{margin-top:40px;display:flex;flex-direction:column;gap:18px}
+    .cd{display:flex;align-items:center;gap:16px;font-family:var(--mono);font-size:15px;color:var(--bone);transition:color .2s}
+    .cd:hover{color:var(--iris-soft)}
+    .cd .ic{width:40px;height:40px;border-radius:11px;border:1px solid var(--hair);display:grid;place-items:center;color:var(--iris-soft);flex:none;font-size:17px}
+    .cd small{display:block;font-family:var(--mono);font-size:11px;color:var(--ash-dim);letter-spacing:.05em;text-transform:uppercase}
+
+    form{display:flex;flex-direction:column;gap:16px}
+    .field{display:flex;flex-direction:column;gap:8px}
+    .field label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--ash)}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    input,select,textarea{
+      background:var(--void-2);border:1px solid var(--hair);border-radius:14px;
+      padding:14px 16px;color:var(--bone);font-family:var(--body);font-size:15px;font-weight:300;
+      transition:border-color .25s,background .25s;width:100%;
+    }
+    input::placeholder,textarea::placeholder{color:var(--ash-dim)}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--iris);background:#0e0e12}
+    select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238a8a92' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer}
+    textarea{resize:vertical;min-height:120px}
+    form .btn{margin-top:6px;justify-content:center;width:100%}
+    .formnote{font-family:var(--mono);font-size:11px;color:var(--ash-dim);text-align:center;letter-spacing:.02em}
+    @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:48px}}
+    @media(max-width:480px){.row2{grid-template-columns:1fr}}
+
+    /* ---------- Footer ---------- */
+    footer{border-top:1px solid var(--hair);padding:70px 0 40px}
+    .foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px}
+    .foot-brand .brand{margin-bottom:18px}
+    .foot-brand p{color:var(--ash);font-size:14px;font-weight:300;max-width:34ch;line-height:1.6}
+    .foot-brand .addr{font-family:var(--mono);font-size:12px;color:var(--ash-dim);margin-top:16px}
+    .foot-col h5{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--ash);margin-bottom:18px}
+    .foot-col a{display:block;color:#cfcfd4;font-size:14px;font-weight:300;padding:5px 0;transition:color .2s}
+    .foot-col a:hover{color:var(--iris-soft)}
+    .foot-bot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--hair);font-family:var(--mono);font-size:12px;color:var(--ash-dim)}
+    .foot-bot .heart{color:var(--iris-soft)}
+    @media(max-width:860px){.foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+    @media(max-width:520px){.foot-top{grid-template-columns:1fr}}
+
+    @media(prefers-reduced-motion:reduce){
+      *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
 </head>
 <body>
-  <!-- Noise overlay -->
-  <div class="noise"></div>
 
-  <!-- Cursor glow -->
-  <div class="cursor-glow" id="cursorGlow"></div>
-
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="nav__container">
-      <a href="#" class="nav__logo">
-        <span class="nav__logo-icon">&lt;S/&gt;</span>
-        <span class="nav__logo-text">Sircle Solutions</span>
-      </a>
-      <div class="nav__links" id="navLinks">
-        <a href="#services">Diensten</a>
-        <a href="#process">Werkwijze</a>
-        <a href="#case">Portfolio</a>
-        <a href="#tech">Tech Stack</a>
-        <a href="#about">Over Ons</a>
+  <!-- ============ NAV ============ -->
+  <header id="hdr">
+    <div class="wrap nav">
+      <a href="#top" class="brand"><span class="glyph">&lt;S/&gt;</span> Sircle Solutions</a>
+      <nav class="nav-links">
+        <a href="#diensten">Diensten</a>
+        <a href="#werkwijze">Werkwijze</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#group">Over Ons</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-primary">Start een project <span class="arw">→</span></a>
       </div>
-      <a href="#contact" class="nav__cta">Start een project →</a>
-      <button class="nav__burger" id="navBurger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+  </header>
 
-  <!-- Full-screen overlay menu -->
-  <div class="overlay-menu" id="overlayMenu">
-    <div class="overlay-menu__bg"></div>
-    <div class="overlay-menu__content">
-      <div class="overlay-menu__header">
-        <div class="overlay-menu__logo">
-          <span class="nav__logo-icon">&lt;S/&gt;</span>
-          <span class="nav__logo-text">Sircle Solutions</span>
-        </div>
-        <button class="overlay-menu__close" id="overlayClose">
-          <span></span><span></span>
-        </button>
-      </div>
-      
-      <div class="overlay-menu__main">
-        <nav class="overlay-menu__nav">
-          <a href="#services" class="overlay-menu__link">
-            <span class="overlay-menu__link-number">01</span>
-            <span class="overlay-menu__link-text">Diensten</span>
-          </a>
-          <a href="#process" class="overlay-menu__link">
-            <span class="overlay-menu__link-number">02</span>
-            <span class="overlay-menu__link-text">Werkwijze</span>
-          </a>
-          <a href="#case" class="overlay-menu__link">
-            <span class="overlay-menu__link-number">03</span>
-            <span class="overlay-menu__link-text">Portfolio</span>
-          </a>
-          <a href="#tech" class="overlay-menu__link">
-            <span class="overlay-menu__link-number">04</span>
-            <span class="overlay-menu__link-text">Tech Stack</span>
-          </a>
-          <a href="#about" class="overlay-menu__link">
-            <span class="overlay-menu__link-number">05</span>
-            <span class="overlay-menu__link-text">Over Ons</span>
-          </a>
-        </nav>
-        
-        <div class="overlay-menu__cta">
-          <a href="#contact" class="overlay-menu__contact-btn" id="overlayContactBtn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Start een project
-          </a>
-          <a href="tel:+31852129145" class="overlay-menu__phone">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            +31 85 212 91 45
-          </a>
-        </div>
-      </div>
-    </div>
+  <div class="drawer" id="drawer">
+    <a href="#diensten"><span class="n">01</span> Diensten</a>
+    <a href="#werkwijze"><span class="n">02</span> Werkwijze</a>
+    <a href="#portfolio"><span class="n">03</span> Portfolio</a>
+    <a href="#stack"><span class="n">04</span> Tech Stack</a>
+    <a href="#group"><span class="n">05</span> Over Ons</a>
+    <a href="#contact" class="btn btn-primary" style="border-bottom:none">Start een project →</a>
   </div>
 
-  <!-- ═══════════ HERO ═══════════ -->
-  <section class="hero" id="hero">
-    <div class="hero__grid-bg"></div>
-    <div class="hero__particles" id="particles"></div>
-    <div class="hero__container">
-      <div class="hero__badge" data-animate="fade-up">
-        <span class="hero__badge-dot"></span>
-        Onderdeel van de Sircle Group
-      </div>
-      <h1 class="hero__title" data-animate="fade-up" data-delay="0.1">
-        Software die<br>
-        <span class="hero__title-gradient">problemen oplost.</span>
-      </h1>
-      <p class="hero__sub" data-animate="fade-up" data-delay="0.2">
-        Wij bouwen custom portals, dashboards, web apps en AI-chatbots.<br>
-        Geen templates. Geen compromissen. Gebouwd voor jouw probleem.
-      </p>
-      <div class="hero__actions" data-animate="fade-up" data-delay="0.3">
-        <a href="#contact" class="btn btn--primary btn--glow">
-          Plan een gesprek
-          <span class="btn__arrow">→</span>
-        </a>
-        <a href="#services" class="btn btn--ghost">
-          Bekijk wat we bouwen
-        </a>
-      </div>
-      <!-- Terminal typing effect -->
-      <div class="hero__terminal" data-animate="fade-up" data-delay="0.4">
-        <div class="terminal">
-          <div class="terminal__bar">
-            <div class="terminal__dots">
-              <span style="background:#ff5f57"></span>
-              <span style="background:#ffbd2e"></span>
-              <span style="background:#28c840"></span>
-            </div>
-            <span class="terminal__title">sircle-solutions — zsh</span>
-          </div>
-          <div class="terminal__body">
-            <div class="terminal__line">
-              <span class="terminal__prompt">$</span>
-              <span class="terminal__text" id="terminalText"></span>
-              <span class="terminal__cursor">█</span>
-            </div>
-            <div class="terminal__output" id="terminalOutput"></div>
-          </div>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <canvas id="constellation" aria-hidden="true"></canvas>
+    <div class="hero-veil"></div>
+    <div class="hero-inner">
+      <div class="wrap">
+        <div class="hero-tag eyebrow">Onderdeel van de Sircle Group</div>
+        <h1>Software die<br><span class="l2">problemen oplost.</span></h1>
+        <p class="lede">Wij bouwen custom portals, dashboards, web apps en AI-chatbots. Geen templates. Geen compromissen. Gebouwd voor jóuw probleem.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Plan een gesprek <span class="arw">→</span></a>
+          <a href="#portfolio" class="btn btn-ghost">Bekijk wat we bouwen</a>
+        </div>
+        <div class="hero-meta">
+          <span><b>7+</b> jaar bouwen</span>
+          <span><b>2 weken</b> tot een werkend prototype</span>
+          <span><b>Den Haag</b> · remote in heel NL</span>
         </div>
       </div>
     </div>
-    <!-- Scroll indicator -->
-    <div class="hero__scroll">
-      <div class="hero__scroll-line"></div>
-      <span>Scroll</span>
-    </div>
+    <div class="scrollcue"><span class="bar"></span> Scroll</div>
   </section>
 
-  <!-- ═══════════ PROBLEM ═══════════ -->
-  <section class="section section--dark" id="problem">
-    <div class="container">
-      <div class="section__label" data-animate="fade-up">Het probleem</div>
-      <h2 class="section__title section__title--large" data-animate="fade-up">
-        Je groeit sneller dan<br>je <span class="text-gradient">tools aankunnen.</span>
-      </h2>
-      <div class="problems-grid" data-animate="fade-up" data-delay="0.1">
-        <div class="problem-card">
-          <div class="problem-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></div>
-          <h3>Spreadsheet chaos</h3>
+  <!-- ============ PROBLEM ============ -->
+  <section class="sec problem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Het probleem</span>
+        <h2>Je groeit sneller dan<br>je tools <span class="dim">aankunnen.</span></h2>
+      </div>
+      <div class="prob-grid reveal">
+        <div class="prob-cell">
+          <span class="idx">01 — Data</span>
+          <h3>Spreadsheet-chaos</h3>
           <p>Excel is geen database. Toch draait je hele operatie erop. Data raakt kwijt, versies conflicteren, en niemand heeft het overzicht.</p>
         </div>
-        <div class="problem-card">
-          <div class="problem-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <div class="prob-cell">
+          <span class="idx">02 — Tooling</span>
           <h3>Tools die niet passen</h3>
           <p>Je betaalt voor 10 SaaS-tools die elk 20% doen van wat je nodig hebt. Integraties bestaan niet, en je workflow is een lappendeken.</p>
         </div>
-        <div class="problem-card">
-          <div class="problem-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg></div>
+        <div class="prob-cell">
+          <span class="idx">03 — Tijd</span>
           <h3>Tijd verloren aan handwerk</h3>
           <p>Je team kopieert data, mailt bestanden rond, en doet handmatig wat software in seconden kan. Elke dag opnieuw.</p>
         </div>
@@ -189,575 +451,483 @@
     </div>
   </section>
 
-  <!-- ═══════════ SERVICES ═══════════ -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section__label" data-animate="fade-up">Wat we bouwen</div>
-      <h2 class="section__title" data-animate="fade-up">
-        Custom software voor<br><span class="text-gradient">elke uitdaging.</span>
-      </h2>
-      <div class="services-grid">
-        <div class="service-card" data-animate="fade-up" data-delay="0.0">
-          <div class="service-card__glow"></div>
-          <div class="service-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <h3 class="service-card__title">Web Applicaties</h3>
-          <p class="service-card__desc">Full-stack web apps gebouwd op moderne frameworks. Van interne tools tot klantgerichte platforms.</p>
-          <div class="service-card__tags">
-            <span>React</span><span>Node.js</span><span>TypeScript</span>
-          </div>
+  <!-- ============ SERVICES ============ -->
+  <section class="sec" id="diensten">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Wat we bouwen</span>
+        <h2>Custom software voor<br>elke uitdaging.</h2>
+        <p>Van interne tools tot klantgerichte platforms — wij kiezen de bouwstenen die bij jouw probleem passen, niet andersom.</p>
+      </div>
+      <div class="svc-list">
+        <div class="svc reveal">
+          <span class="num">01</span>
+          <div class="body"><h3>Web Applicaties</h3><p>Full-stack web apps op moderne frameworks. Van interne tools tot klantgerichte platforms.</p></div>
+          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">TypeScript</span></div>
         </div>
-        <div class="service-card" data-animate="fade-up" data-delay="0.05">
-          <div class="service-card__glow"></div>
-          <div class="service-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="4" rx="1"/><rect x="14" y="10" width="7" height="11" rx="1"/><rect x="3" y="13" width="7" height="8" rx="1"/></svg></div>
-          <h3 class="service-card__title">Dashboards & Portals</h3>
-          <p class="service-card__desc">Real-time dashboards en klantportals die data omzetten in inzicht. Met drag & drop, filters en exports.</p>
-          <div class="service-card__tags">
-            <span>Real-time</span><span>Analytics</span><span>API's</span>
-          </div>
+        <div class="svc reveal">
+          <span class="num">02</span>
+          <div class="body"><h3>Dashboards &amp; Portals</h3><p>Real-time dashboards en klantportals die data omzetten in inzicht. Met drag &amp; drop, filters en exports.</p></div>
+          <div class="tags"><span class="tag">Real-time</span><span class="tag">Analytics</span><span class="tag">API's</span></div>
         </div>
-        <div class="service-card" data-animate="fade-up" data-delay="0.1">
-          <div class="service-card__glow"></div>
-          <div class="service-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg></div>
-          <h3 class="service-card__title">Boekingssystemen</h3>
-          <p class="service-card__desc">Slimme planning en reserveringssystemen. Automatische bevestigingen, betalingen en kalender sync.</p>
-          <div class="service-card__tags">
-            <span>Stripe</span><span>Calendar</span><span>Automations</span>
-          </div>
+        <div class="svc reveal">
+          <span class="num">03</span>
+          <div class="body"><h3>Boekingssystemen</h3><p>Slimme planning en reserveringen. Automatische bevestigingen, betalingen en kalender-sync.</p></div>
+          <div class="tags"><span class="tag">Stripe</span><span class="tag">Calendar</span><span class="tag">Automations</span></div>
         </div>
-        <div class="service-card" data-animate="fade-up" data-delay="0.15">
-          <div class="service-card__glow"></div>
-          <div class="service-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-          <h3 class="service-card__title">Database Systemen</h3>
-          <p class="service-card__desc">Op maat gemaakte CRM's, inventarissystemen en data management. Jouw data, jouw structuur, jouw regels.</p>
-          <div class="service-card__tags">
-            <span>PostgreSQL</span><span>SQLite</span><span>API</span>
-          </div>
+        <div class="svc reveal">
+          <span class="num">04</span>
+          <div class="body"><h3>Database Systemen</h3><p>Op maat gemaakte CRM's, inventaris- en datamanagement. Jouw data, jouw structuur, jouw regels.</p></div>
+          <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQLite</span><span class="tag">API</span></div>
         </div>
-        <div class="service-card" data-animate="fade-up" data-delay="0.2">
-          <div class="service-card__glow"></div>
-          <div class="service-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a6 6 0 0 1-12 0V8h12z"/><path d="M6 8H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h2"/><path d="M18 8h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2"/></svg></div>
-          <h3 class="service-card__title">WordPress Plugins</h3>
-          <p class="service-card__desc">Custom WP plugins die naadloos integreren met je bestaande site. Van formulieren tot complexe workflows.</p>
-          <div class="service-card__tags">
-            <span>PHP</span><span>WordPress</span><span>WooCommerce</span>
-          </div>
+        <div class="svc reveal">
+          <span class="num">05</span>
+          <div class="body"><h3>WordPress Plugins</h3><p>Custom WP-plugins die naadloos integreren met je bestaande site. Van formulieren tot complexe workflows.</p></div>
+          <div class="tags"><span class="tag">PHP</span><span class="tag">WordPress</span><span class="tag">WooCommerce</span></div>
         </div>
-        <div class="service-card" data-animate="fade-up" data-delay="0.25">
-          <div class="service-card__glow"></div>
-          <div class="service-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 14h3"/><path d="M1 9h3"/><path d="M1 14h3"/></svg></div>
-          <h3 class="service-card__title">AI & Automatisering</h3>
-          <p class="service-card__desc">Slimme automatiseringen powered by AI. Document processing, predictive analytics en workflow automatisering die je team uren per dag besparen.</p>
-          <div class="service-card__tags">
-            <span>Claude Code</span><span>OpenAI</span><span>Python</span><span>Workflows</span>
-          </div>
+        <div class="svc reveal">
+          <span class="num">06</span>
+          <div class="body"><h3>AI &amp; Automatisering</h3><p>Slimme automatisering powered by AI. Document processing, predictive analytics en workflows die je team uren per dag besparen.</p></div>
+          <div class="tags"><span class="tag">Claude</span><span class="tag">OpenAI</span><span class="tag">Python</span></div>
         </div>
-        <div class="service-card" data-animate="fade-up" data-delay="0.3">
-          <div class="service-card__glow"></div>
-          <div class="service-card__icon icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg></div>
-          <h3 class="service-card__title">Chatbots & Klantenservice</h3>
-          <p class="service-card__desc">AI-powered chatbots en assistants die 24/7 klanten helpen. Getraind op jouw data, geïntegreerd met je bestaande systemen.</p>
-          <div class="service-card__tags">
-            <span>AI Assistants</span><span>NLP</span><span>Live Chat</span><span>CRM</span>
-          </div>
+        <div class="svc reveal">
+          <span class="num">07</span>
+          <div class="body"><h3>Chatbots &amp; Klantenservice</h3><p>AI-chatbots en assistants die 24/7 klanten helpen. Getraind op jouw data, geïntegreerd met je systemen.</p></div>
+          <div class="tags"><span class="tag">AI Assistants</span><span class="tag">NLP</span><span class="tag">CRM</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ PROCESS ═══════════ -->
-  <section class="section section--dark" id="process">
-    <div class="container">
-      <div class="section__label" data-animate="fade-up">Hoe we werken</div>
-      <h2 class="section__title" data-animate="fade-up">
-        Van idee tot<br><span class="text-gradient">lancering in weken.</span>
-      </h2>
-      <div class="process-timeline">
-        <div class="process-line" id="processLine"></div>
-        <div class="process-step" data-animate="fade-up" data-delay="0.0">
-          <div class="process-step__number">01</div>
-          <div class="process-step__content">
-            <h3>Discovery & Intake</h3>
-            <p>We luisteren naar je uitdaging, analyseren je processen en definiëren samen de scope. Geen technisch jargon — gewoon heldere afspraken.</p>
-          </div>
+  <!-- ============ PROCESS ============ -->
+  <section class="sec proc" id="werkwijze">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Hoe we werken</span>
+        <h2>Van idee tot<br>lancering in weken.</h2>
+      </div>
+      <div class="proc-grid">
+        <div class="step reveal">
+          <div class="rail"><span class="dot"></span><span class="line"></span></div>
+          <span class="st-num">STAP 01</span>
+          <h3 style="margin-top:14px">Discovery &amp; Intake</h3>
+          <p>We luisteren naar je uitdaging, analyseren je processen en definiëren samen de scope. Geen jargon — heldere afspraken.</p>
         </div>
-        <div class="process-step" data-animate="fade-up" data-delay="0.1">
-          <div class="process-step__number">02</div>
-          <div class="process-step__content">
-            <h3>Design & Prototype</h3>
-            <p>Interactief prototype zodat je ziet wat je krijgt. Feedback loops tot het perfect is. Je test voordat er één regel code geschreven wordt.</p>
-          </div>
+        <div class="step reveal">
+          <div class="rail"><span class="dot"></span><span class="line"></span></div>
+          <span class="st-num">STAP 02</span>
+          <h3 style="margin-top:14px">Design &amp; Prototype</h3>
+          <p>Interactief prototype zodat je ziet wat je krijgt. Feedback-loops tot het perfect is — vóór er één regel code staat.</p>
         </div>
-        <div class="process-step" data-animate="fade-up" data-delay="0.2">
-          <div class="process-step__number">03</div>
-          <div class="process-step__content">
-            <h3>Build & Iterate</h3>
-            <p>Agile development in sprints van 2 weken. Je ziet voortgang, geeft feedback, en we bouwen door. Geen verrassingen bij oplevering.</p>
-          </div>
+        <div class="step reveal">
+          <div class="rail"><span class="dot"></span><span class="line"></span></div>
+          <span class="st-num">STAP 03</span>
+          <h3 style="margin-top:14px">Build &amp; Iterate</h3>
+          <p>Agile development in sprints van 2 weken. Je ziet voortgang, geeft feedback, we bouwen door. Geen verrassingen.</p>
         </div>
-        <div class="process-step" data-animate="fade-up" data-delay="0.3">
-          <div class="process-step__number">04</div>
-          <div class="process-step__content">
-            <h3>Launch & Support</h3>
-            <p>Go-live met monitoring, training en documentatie. Daarna doorlopende support en doorontwikkeling. We laten je niet vallen na launch.</p>
-          </div>
+        <div class="step reveal">
+          <div class="rail"><span class="dot"></span><span class="line"></span></div>
+          <span class="st-num">STAP 04</span>
+          <h3 style="margin-top:14px">Launch &amp; Support</h3>
+          <p>Go-live met monitoring, training en documentatie. Daarna doorlopende support en doorontwikkeling. We laten je niet vallen.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ CASE STUDIES ═══════════ -->
-  <section class="section" id="case">
-    <div class="container">
-      <div class="section__label" data-animate="fade-up">Portfolio</div>
-      <h2 class="section__title" data-animate="fade-up">
-        Gebouwd door<br><span class="text-gradient">Sircle Solutions.</span>
-      </h2>
-      <div class="case-grid">
-        <!-- Case 1: VLIJT -->
-        <div class="case-grid__card" data-animate="fade-up">
-          <div class="case-grid__visual">
-            <div class="case-grid__browser">
-              <div class="case-grid__browser-bar">
-                <div class="case-grid__browser-dots"><span></span><span></span><span></span></div>
-                <div class="case-grid__browser-url"></div>
-              </div>
-              <div class="case-grid__browser-body">
-                <div class="case-mock case-mock--pipeline">
-                  <div class="case-mock__sidebar">
-                    <div class="case-mock__sidebar-item active"></div>
-                    <div class="case-mock__sidebar-item"></div>
-                    <div class="case-mock__sidebar-item"></div>
-                    <div class="case-mock__sidebar-item"></div>
-                  </div>
-                  <div class="case-mock__main">
-                    <div class="case-mock__stats">
-                      <div class="case-mock__stat"></div>
-                      <div class="case-mock__stat"></div>
-                      <div class="case-mock__stat"></div>
-                      <div class="case-mock__stat"></div>
-                    </div>
-                    <div class="case-mock__pipeline">
-                      <div class="case-mock__col">
-                        <div class="case-mock__col-header" style="background:#3b82f6"></div>
-                        <div class="case-mock__card"></div>
-                        <div class="case-mock__card"></div>
-                        <div class="case-mock__card"></div>
-                      </div>
-                      <div class="case-mock__col">
-                        <div class="case-mock__col-header" style="background:#f59e0b"></div>
-                        <div class="case-mock__card"></div>
-                        <div class="case-mock__card"></div>
-                      </div>
-                      <div class="case-mock__col">
-                        <div class="case-mock__col-header" style="background:#8b5cf6"></div>
-                        <div class="case-mock__card"></div>
-                      </div>
-                      <div class="case-mock__col">
-                        <div class="case-mock__col-header" style="background:#10b981"></div>
-                        <div class="case-mock__card"></div>
-                        <div class="case-mock__card"></div>
-                        <div class="case-mock__card"></div>
-                        <div class="case-mock__card"></div>
-                      </div>
-                      <div class="case-mock__col">
-                        <div class="case-mock__col-header" style="background:#06b6d4"></div>
-                        <div class="case-mock__card"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="case-grid__info">
-            <div class="case-grid__badge">CRM Portal</div>
-            <h3 class="case-grid__title">VLIJT Tandartsen</h3>
-            <p class="case-grid__desc">Op maat gebouwd CRM-systeem dat het Google Sheet verving. Patiënt-pipeline met drag & drop, real-time statistieken per kanaal, geografische spreiding op postcode en automatische website-sync. Fundament voor toekomstige uitbreidingen zoals AI-chatbots, contentplanning en geautomatiseerde notificaties.</p>
-            <div class="case-grid__metrics">
-              <div class="case-grid__metric"><span class="case-grid__metric-val">Real-time</span><span class="case-grid__metric-lbl">Data sync</span></div>
-              <div class="case-grid__metric"><span class="case-grid__metric-val">5</span><span class="case-grid__metric-lbl">Pipeline fases</span></div>
-              <div class="case-grid__metric"><span class="case-grid__metric-val">2 weken</span><span class="case-grid__metric-lbl">Bouwtijd</span></div>
-            </div>
-            <div class="case-grid__stack">
-              <span>Node.js</span><span>Express</span><span>SQLite</span><span>Vanilla JS</span><span>Cloudflare</span>
-            </div>
-          </div>
-        </div>
+  <!-- ============ PORTFOLIO ============ -->
+  <section class="sec port" id="portfolio">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Portfolio</span>
+        <h2>Gebouwd door<br>Sircle Solutions.</h2>
+      </div>
 
-        <!-- Case 2: ORBIT -->
-        <div class="case-grid__card" data-animate="fade-up">
-          <div class="case-grid__visual">
-            <div class="case-grid__browser">
-              <div class="case-grid__browser-bar">
-                <div class="case-grid__browser-dots"><span></span><span></span><span></span></div>
-                <div class="case-grid__browser-url"></div>
-              </div>
-              <div class="case-grid__browser-body">
-                <div class="case-mock case-mock--bento">
-                  <div class="case-mock__bento-top">
-                    <div class="case-mock__bento-stat" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.25)"></div>
-                    <div class="case-mock__bento-stat" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.25)"></div>
-                    <div class="case-mock__bento-stat" style="background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.25)"></div>
-                    <div class="case-mock__bento-stat" style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.25)"></div>
-                  </div>
-                  <div class="case-mock__bento-bottom">
-                    <div class="case-mock__bento-card case-mock__bento-card--wide"></div>
-                    <div class="case-mock__bento-card"></div>
-                    <div class="case-mock__bento-card"></div>
-                    <div class="case-mock__bento-card case-mock__bento-card--wide"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="proj reveal">
+        <div class="proj-info">
+          <div class="kicker">CRM Portal · VLIJT Tandartsen</div>
+          <h3>Het Google Sheet, vervangen.</h3>
+          <p>Op maat gebouwd CRM dat de spreadsheet verving. Patiënt-pipeline met drag &amp; drop, real-time statistieken per kanaal, geografische spreiding op postcode en automatische website-sync. Fundament voor AI-chatbots, contentplanning en notificaties.</p>
+          <div class="proj-stats">
+            <div class="s"><b>Real-time</b><span>Data sync</span></div>
+            <div class="s"><b>5</b><span>Pipeline-fases</span></div>
+            <div class="s"><b>2 wkn</b><span>Bouwtijd</span></div>
           </div>
-          <div class="case-grid__info">
-            <div class="case-grid__badge">In-house SaaS — Coming Soon</div>
-            <h3 class="case-grid__title">ORBIT</h3>
-            <p class="case-grid__desc">All-in-one business software voor groeiende bedrijven. Project management, CRM, finance, agenda, content planning, contracten met digitale handtekening en team management — alles in één platform.</p>
-            <div class="case-grid__metrics">
-              <div class="case-grid__metric"><span class="case-grid__metric-val">12</span><span class="case-grid__metric-lbl">Modules</span></div>
-              <div class="case-grid__metric"><span class="case-grid__metric-val">All-in-one</span><span class="case-grid__metric-lbl">Platform</span></div>
-              <div class="case-grid__metric"><span class="case-grid__metric-val">SaaS</span><span class="case-grid__metric-lbl">Coming soon</span></div>
-            </div>
-            <div class="case-grid__stack">
-              <span>Node.js</span><span>Express</span><span>SQLite</span><span>Tailwind</span><span>Cloudflare</span><span>PM2</span>
-            </div>
-          </div>
+          <div class="proj-tech"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">Vanilla JS</span><span class="tag">Cloudflare</span></div>
         </div>
+        <div class="proj-visual"><div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>crm.vlijt.nl</span></div>
+          <div class="mock-body">
+            <div class="mock-tile wide"></div>
+            <div class="mock-tile tall"></div><div class="mock-tile"></div><div class="mock-tile"></div>
+            <div class="mock-tile"></div><div class="mock-tile"></div>
+          </div>
+        </div></div>
+      </div>
 
-        <!-- Case 3: Proposly -->
-        <div class="case-grid__card" data-animate="fade-up">
-          <div class="case-grid__visual">
-            <div class="case-grid__browser">
-              <div class="case-grid__browser-bar">
-                <div class="case-grid__browser-dots"><span></span><span></span><span></span></div>
-                <div class="case-grid__browser-url"></div>
-              </div>
-              <div class="case-grid__browser-body">
-                <div class="case-mock case-mock--wizard">
-                  <div class="case-mock__wizard-progress">
-                    <div class="case-mock__wizard-step case-mock__wizard-step--done"></div>
-                    <div class="case-mock__wizard-step case-mock__wizard-step--done"></div>
-                    <div class="case-mock__wizard-step case-mock__wizard-step--active"></div>
-                    <div class="case-mock__wizard-step"></div>
-                    <div class="case-mock__wizard-step"></div>
-                    <div class="case-mock__wizard-step"></div>
-                  </div>
-                  <div class="case-mock__wizard-body">
-                    <div class="case-mock__wizard-form">
-                      <div class="case-mock__wizard-field"></div>
-                      <div class="case-mock__wizard-field case-mock__wizard-field--short"></div>
-                      <div class="case-mock__wizard-field"></div>
-                      <div class="case-mock__wizard-textarea"></div>
-                      <div class="case-mock__wizard-btn"></div>
-                    </div>
-                    <div class="case-mock__wizard-sidebar">
-                      <div class="case-mock__wizard-preview"></div>
-                      <div class="case-mock__wizard-preview-line"></div>
-                      <div class="case-mock__wizard-preview-line case-mock__wizard-preview-line--short"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="proj rev reveal">
+        <div class="proj-info">
+          <div class="kicker">In-house SaaS · <span class="status">Coming soon</span></div>
+          <h3>ORBIT</h3>
+          <p>All-in-one business software voor groeiende bedrijven. Project management, CRM, finance, agenda, contentplanning, contracten met digitale handtekening en team management — alles in één platform.</p>
+          <div class="proj-stats">
+            <div class="s"><b>12</b><span>Modules</span></div>
+            <div class="s"><b>All-in-one</b><span>Platform</span></div>
+            <div class="s"><b>SaaS</b><span>2026</span></div>
           </div>
-          <div class="case-grid__info">
-            <div class="case-grid__badge">SaaS Product — Coming Soon</div>
-            <h3 class="case-grid__title">Proposly</h3>
-            <p class="case-grid__desc">AI-powered offerte tool met 6-staps wizard. Upload je producten en media, AI genereert professionele offertes in StoryBrand structuur. Multi-language (NL/EN).</p>
-            <div class="case-grid__metrics">
-              <div class="case-grid__metric"><span class="case-grid__metric-val">6-staps</span><span class="case-grid__metric-lbl">Wizard</span></div>
-              <div class="case-grid__metric"><span class="case-grid__metric-val">40+</span><span class="case-grid__metric-lbl">API's</span></div>
-              <div class="case-grid__metric"><span class="case-grid__metric-val">3</span><span class="case-grid__metric-lbl">Pricing tiers</span></div>
-            </div>
-            <div class="case-grid__stack">
-              <span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>Clerk Auth</span><span>Tailwind</span>
-            </div>
-          </div>
+          <div class="proj-tech"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">Tailwind</span><span class="tag">PM2</span></div>
         </div>
+        <div class="proj-visual"><div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>orbit.app</span></div>
+          <div class="mock-body">
+            <div class="mock-tile"></div><div class="mock-tile"></div><div class="mock-tile"></div>
+            <div class="mock-tile wide"></div>
+            <div class="mock-tile"></div><div class="mock-tile"></div><div class="mock-tile"></div>
+          </div>
+        </div></div>
+      </div>
 
-        <!-- Case 4: 22Q-minded -->
-        <div class="case-grid__card" data-animate="fade-up">
-          <div class="case-grid__visual">
-            <div class="case-grid__browser">
-              <div class="case-grid__browser-bar">
-                <div class="case-grid__browser-dots"><span></span><span></span><span></span></div>
-                <div class="case-grid__browser-url"></div>
-              </div>
-              <div class="case-grid__browser-body">
-                <div class="case-mock case-mock--shop">
-                  <div class="case-mock__shop-grid">
-                    <div class="case-mock__shop-product">
-                      <div class="case-mock__shop-img"></div>
-                      <div class="case-mock__shop-name"></div>
-                      <div class="case-mock__shop-price"></div>
-                    </div>
-                    <div class="case-mock__shop-product">
-                      <div class="case-mock__shop-img"></div>
-                      <div class="case-mock__shop-name"></div>
-                      <div class="case-mock__shop-price"></div>
-                    </div>
-                    <div class="case-mock__shop-product">
-                      <div class="case-mock__shop-img"></div>
-                      <div class="case-mock__shop-name"></div>
-                      <div class="case-mock__shop-price"></div>
-                    </div>
-                  </div>
-                  <div class="case-mock__shop-cart">
-                    <div class="case-mock__shop-cart-title"></div>
-                    <div class="case-mock__shop-cart-item"></div>
-                    <div class="case-mock__shop-cart-item"></div>
-                    <div class="case-mock__shop-cart-divider"></div>
-                    <div class="case-mock__shop-cart-total"></div>
-                    <div class="case-mock__shop-cart-btn"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="proj reveal">
+        <div class="proj-info">
+          <div class="kicker">SaaS Product · <span class="status">Coming soon</span></div>
+          <h3>Proposly</h3>
+          <p>AI-powered offertetool met 6-staps wizard. Upload je producten en media, AI genereert professionele offertes in StoryBrand-structuur. Multi-language (NL/EN).</p>
+          <div class="proj-stats">
+            <div class="s"><b>6-staps</b><span>Wizard</span></div>
+            <div class="s"><b>40+</b><span>API's</span></div>
+            <div class="s"><b>3</b><span>Pricing tiers</span></div>
           </div>
-          <div class="case-grid__info">
-            <div class="case-grid__badge">WordPress Plugin</div>
-            <h3 class="case-grid__title">22Q-minded</h3>
-            <p class="case-grid__desc">Dynamische pricing plugin voor WooCommerce. Automatische kortingsberekening op basis van bundel-samenstelling — naadloos geïntegreerd in de bestaande webshop.</p>
-            <div class="case-grid__metrics">
-              <div class="case-grid__metric"><span class="case-grid__metric-val">Dynamisch</span><span class="case-grid__metric-lbl">Pricing engine</span></div>
-              <div class="case-grid__metric"><span class="case-grid__metric-val">WooCommerce</span><span class="case-grid__metric-lbl">Integratie</span></div>
-              <div class="case-grid__metric"><span class="case-grid__metric-val">Live</span><span class="case-grid__metric-lbl">Webshop</span></div>
-            </div>
-            <div class="case-grid__stack">
-              <span>PHP</span><span>WordPress</span><span>WooCommerce</span><span>JavaScript</span><span>MySQL</span>
-            </div>
-          </div>
+          <div class="proj-tech"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Clerk</span><span class="tag">Tailwind</span></div>
         </div>
+        <div class="proj-visual"><div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>proposly.io</span></div>
+          <div class="mock-body">
+            <div class="mock-tile wide"></div>
+            <div class="mock-tile"></div><div class="mock-tile"></div><div class="mock-tile"></div>
+            <div class="mock-tile wide"></div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="proj rev reveal">
+        <div class="proj-info">
+          <div class="kicker">WordPress Plugin · <span class="status" style="color:var(--verdant)">Live</span></div>
+          <h3>22Q-minded</h3>
+          <p>Dynamische pricing-plugin voor WooCommerce. Automatische kortingsberekening op basis van bundel-samenstelling — naadloos geïntegreerd in de bestaande webshop.</p>
+          <div class="proj-stats">
+            <div class="s"><b>Dynamisch</b><span>Pricing engine</span></div>
+            <div class="s"><b>WooCom</b><span>Integratie</span></div>
+            <div class="s"><b>Live</b><span>Webshop</span></div>
+          </div>
+          <div class="proj-tech"><span class="tag">PHP</span><span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">MySQL</span></div>
+        </div>
+        <div class="proj-visual"><div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>shop · 22q-minded</span></div>
+          <div class="mock-body">
+            <div class="mock-tile tall"></div><div class="mock-tile"></div><div class="mock-tile"></div>
+            <div class="mock-tile"></div><div class="mock-tile"></div>
+            <div class="mock-tile wide"></div>
+          </div>
+        </div></div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ TECH STACK ═══════════ -->
-  <section class="section section--dark" id="tech">
-    <div class="container">
-      <div class="section__label" data-animate="fade-up">Tech Stack</div>
-      <h2 class="section__title" data-animate="fade-up">
-        Modern. Betrouwbaar.<br><span class="text-gradient">Schaalbaar.</span>
-      </h2>
-      <p class="section__sub" data-animate="fade-up">We kiezen de beste technologie voor jouw project — niet andersom.</p>
-      <div class="tech-grid" data-animate="fade-up">
-        <div class="tech-category">
-          <h4 class="tech-category__title">Frontend</h4>
-          <div class="tech-logos">
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="11" cy="11" rx="10" ry="4"/><ellipse cx="11" cy="11" rx="10" ry="4" transform="rotate(60 11 11)"/><ellipse cx="11" cy="11" rx="10" ry="4" transform="rotate(120 11 11)"/><circle cx="11" cy="11" r="2" fill="currentColor" stroke="none"/></svg></span><small>React</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M11 2L3 18h4l4-8 4 8h4L11 2z"/></svg></span><small>Vue.js</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><text x="4" y="16" font-family="Inter,sans-serif" font-weight="800" font-size="14" fill="currentColor">N</text></svg></span><small>Next.js</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"/><text x="4.5" y="16" font-family="Inter,sans-serif" font-weight="700" font-size="12" fill="currentColor">TS</text></svg></span><small>TypeScript</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 17L8 7l3 5 4-9 4 14"/></svg></span><small>Tailwind</small></div>
-          </div>
-        </div>
-        <div class="tech-category">
-          <h4 class="tech-category__title">Backend</h4>
-          <div class="tech-logos">
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 2v18"/><path d="M5 6h12"/><path d="M7 10h8"/><path d="M4 14h14"/><path d="M6 18h10"/></svg></span><small>Node.js</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 4c-2 2-3 5-2 8s4 6 6 7"/><path d="M15 4c2 2 3 5 2 8s-4 6-6 7"/></svg></span><small>Python</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 11h14"/><path d="M11 4v14"/><path d="M6 6l10 10"/><path d="M16 6L6 16"/></svg></span><small>Express</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M13 2L5 12h6l-2 8 8-10h-6l2-8z"/></svg></span><small>FastAPI</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2v4"/><path d="M11 16v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M14.24 14.24l2.83 2.83"/><path d="M2 11h4"/><path d="M16 11h4"/><path d="M4.93 17.07l2.83-2.83"/><path d="M14.24 7.76l2.83-2.83"/></svg></span><small>Firebase</small></div>
-          </div>
-        </div>
-        <div class="tech-category">
-          <h4 class="tech-category__title">Database</h4>
-          <div class="tech-logos">
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="11" cy="5" rx="8" ry="3"/><path d="M3 5v12c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M3 11c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg></span><small>PostgreSQL</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 4c0 2 3 4 6 4s6-2 6-4"/><path d="M5 4v6c0 2 3 4 6 4s6-2 6-4V4"/><path d="M5 10v6c0 2 3 4 6 4s6-2 6-4v-6"/></svg></span><small>MongoDB</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M13 2L5 12h6l-2 8 8-10h-6l2-8z"/></svg></span><small>Supabase</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="11" cy="5" rx="8" ry="3"/><path d="M3 5v12c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/></svg></span><small>SQLite</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="3"/><circle cx="11" cy="11" r="7"/><circle cx="11" cy="11" r="10"/></svg></span><small>Redis</small></div>
-          </div>
-        </div>
-        <div class="tech-category">
-          <h4 class="tech-category__title">AI & Development</h4>
-          <div class="tech-logos">
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l2-2-2-2"/><path d="M6 18l-2-2 2-2"/><path d="M13 6l-4 10"/></svg></span><small>Claude Code</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M9 9h4v4H9z"/><path d="M9 1v3"/><path d="M13 1v3"/><path d="M9 18v3"/><path d="M13 18v3"/><path d="M18 9h3"/><path d="M18 13h3"/><path d="M1 9h3"/><path d="M1 13h3"/></svg></span><small>OpenAI</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5-4 6v3H7v-3c-2-1-4-3-4-6a7 7 0 0 1 7-7z"/><path d="M9 21h4"/></svg></span><small>AI Chatbots</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6h14"/><path d="M4 11h14"/><path d="M4 16h8"/><circle cx="18" cy="16" r="2"/><path d="M20 16l2 2"/></svg></span><small>RAG</small></div>
-          </div>
-        </div>
-        <div class="tech-category">
-          <h4 class="tech-category__title">Cloud & DevOps</h4>
-          <div class="tech-logos">
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18H6a5 5 0 0 1-.85-9.93A7 7 0 0 1 18.67 10 4 4 0 0 1 17 18z"/></svg></span><small>AWS</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="9"/><path d="M2 11h18"/><ellipse cx="11" cy="11" rx="4" ry="9"/></svg></span><small>Cloudflare</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 17c2-1 4-3 4-6V6c0-1 1-2 2-2h4c1 0 2 1 2 2v5c0 3 2 5 4 6"/><path d="M7 17h8"/></svg></span><small>Docker</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><text x="4" y="16" font-family="Inter,sans-serif" font-weight="800" font-size="14" fill="currentColor">▲</text></svg></span><small>Vercel</small></div>
-            <div class="tech-logo"><span class="icon tech-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="3"/><path d="M11 2a9 9 0 0 1 6.36 2.64"/><path d="M19.36 7.36A9 9 0 0 1 20 11"/><path d="M20 11a9 9 0 0 1-2.64 6.36"/><path d="M14.36 19.36A9 9 0 0 1 11 20"/><path d="M11 20a9 9 0 0 1-6.36-2.64"/><path d="M2.64 14.36A9 9 0 0 1 2 11"/></svg></span><small>GitHub</small></div>
-          </div>
-        </div>
+  <!-- ============ TECH STACK ============ -->
+  <section class="sec tech" id="stack">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Tech Stack</span>
+        <h2>Modern. Betrouwbaar. <span class="dim">Schaalbaar.</span></h2>
+        <p>We kiezen de beste technologie voor jouw project — niet andersom.</p>
+      </div>
+      <div class="tech-grid reveal">
+        <div class="tech-col"><h4>Frontend</h4><ul><li>React</li><li>Vue.js</li><li>Next.js</li><li>TypeScript</li><li>Tailwind</li></ul></div>
+        <div class="tech-col"><h4>Backend</h4><ul><li>Node.js</li><li>Python</li><li>Express</li><li>FastAPI</li><li>Firebase</li></ul></div>
+        <div class="tech-col"><h4>Database</h4><ul><li>PostgreSQL</li><li>MongoDB</li><li>Supabase</li><li>SQLite</li><li>Redis</li></ul></div>
+        <div class="tech-col"><h4>AI &amp; Dev</h4><ul><li>Claude Code</li><li>OpenAI</li><li>AI Chatbots</li><li>RAG</li></ul></div>
+        <div class="tech-col"><h4>Cloud &amp; DevOps</h4><ul><li>AWS</li><li>Cloudflare</li><li>Docker</li><li>Vercel</li><li>GitHub</li></ul></div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ ABOUT / SIRCLE GROUP ═══════════ -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section__label" data-animate="fade-up">De Sircle Group</div>
-      <h2 class="section__title" data-animate="fade-up">
-        Drie bedrijven.<br><span class="text-gradient">Eén ecosysteem.</span>
-      </h2>
+  <!-- ============ SIRCLE GROUP ============ -->
+  <section class="sec group" id="group">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">De Sircle Group</span>
+        <h2>Drie bedrijven.<br>Eén ecosysteem.</h2>
+      </div>
       <div class="group-grid">
-        <div class="group-card" data-animate="fade-up" data-delay="0.0">
-          <div class="group-card__logo icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
-          <h3 class="group-card__title">Sircle Agency</h3>
-          <p class="group-card__sub">sircle.agency</p>
-          <p class="group-card__desc">Strategie, branding, film & design. Every brand has a story worth telling.</p>
-          <div class="group-card__tag">Creative</div>
+        <a href="https://sircle.agency" class="company reveal" target="_blank" rel="noopener">
+          <span class="role">Creative</span>
+          <h3>Sircle Agency</h3>
+          <span class="dom">sircle.agency</span>
+          <p>Strategie, branding, film &amp; design. Every brand has a story worth telling.</p>
+          <span class="go">Bezoek →</span>
+        </a>
+        <div class="company mid reveal">
+          <span class="role">Software</span>
+          <h3>Sircle Solutions</h3>
+          <span class="dom">sircle.dev</span>
+          <p>Custom software, portals, apps &amp; automatisering. Slimme oplossingen voor complexe problemen.</p>
+          <span class="go" style="color:var(--saffron)">Je bent hier ●</span>
         </div>
-        <div class="group-card group-card--active" data-animate="fade-up" data-delay="0.1">
-          <div class="group-card__logo">&lt;S/&gt;</div>
-          <h3 class="group-card__title">Sircle Solutions</h3>
-          <p class="group-card__sub">sircle.dev</p>
-          <p class="group-card__desc">Custom software, portals, apps & automatisering. Slimme oplossingen voor complexe problemen.</p>
-          <div class="group-card__tag">Software</div>
-        </div>
-        <div class="group-card" data-animate="fade-up" data-delay="0.2">
-          <div class="group-card__logo icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <h3 class="group-card__title">Sircle.dev</h3>
-          <p class="group-card__sub">sircle.dev</p>
-          <p class="group-card__desc">Developer teams on demand. Schaal je tech team op in weken, niet maanden.</p>
-          <div class="group-card__tag">Development</div>
-        </div>
+        <a href="https://sircle.dev" class="company reveal" target="_blank" rel="noopener">
+          <span class="role">Development</span>
+          <h3>Sircle.dev</h3>
+          <span class="dom">sircle.dev</span>
+          <p>Developer teams on demand. Schaal je tech-team op in weken, niet maanden.</p>
+          <span class="go">Bezoek →</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ CTA ═══════════ -->
-  <section class="section section--cta" id="contact">
-    <div class="container">
-      <div class="cta-content" data-animate="fade-up">
-        <h2 class="cta__title">Klaar om te bouwen?</h2>
-        <p class="cta__sub">Vertel ons je uitdaging. We denken graag met je mee, vrijblijvend.</p>
-        <div class="cta__actions">
-          <a href="mailto:hello@sircle.dev" class="btn btn--primary btn--large btn--glow">
-            hello@sircle.dev
-            <span class="btn__arrow">→</span>
-          </a>
-          <a href="tel:+31852129145" class="btn btn--ghost btn--large">
-            +31 85 212 91 45
-          </a>
+  <!-- ============ CONTACT ============ -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="reveal">
+          <span class="eyebrow">Klaar om te bouwen?</span>
+          <h2 style="margin-top:22px">Vertel ons je uitdaging.</h2>
+          <p class="lede">We denken graag met je mee, vrijblijvend. Binnen 24 uur een reactie.</p>
+          <div class="contact-direct">
+            <a class="cd" href="mailto:hello@sircle.dev">
+              <span class="ic">@</span>
+              <span>hello@sircle.dev<small>Mail ons direct</small></span>
+            </a>
+            <a class="cd" href="tel:+31852129145">
+              <span class="ic">☏</span>
+              <span>+31 85 212 91 45<small>Bel op werkdagen</small></span>
+            </a>
+            <a class="cd" href="mailto:hello@sircle.dev?subject=Videocall%20plannen">
+              <span class="ic">◎</span>
+              <span>Plan een videocall<small>30 minuten, online</small></span>
+            </a>
+          </div>
         </div>
-        <p class="cta__note">Of plan direct een <a href="#">videocall van 30 minuten</a></p>
+
+        <form action="https://formsubmit.co/hello@sircle.dev" method="POST" class="reveal">
+          <input type="hidden" name="_subject" value="Nieuwe projectaanvraag via sirclesolutions.com">
+          <input type="hidden" name="_next" value="https://sirclesolutions.com/?submitted=true">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none">
+          <div class="row2">
+            <div class="field"><label for="naam">Naam *</label><input id="naam" name="naam" required placeholder="Je naam"></div>
+            <div class="field"><label for="email">Email *</label><input id="email" type="email" name="email" required placeholder="jij@bedrijf.nl"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="bedrijf">Bedrijf</label><input id="bedrijf" name="bedrijf" placeholder="Bedrijfsnaam"></div>
+            <div class="field"><label for="type">Type project *</label>
+              <select id="type" name="type_project" required>
+                <option value="">Kies een optie</option>
+                <option>Web Applicatie</option>
+                <option>Dashboard / Portal</option>
+                <option>CRM / Database</option>
+                <option>AI / Chatbot</option>
+                <option>WordPress Plugin</option>
+                <option>Automatisering</option>
+                <option>Anders</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="bericht">Vertel over je project *</label><textarea id="bericht" name="bericht" required placeholder="Wat wil je bouwen? Welk probleem lost het op?"></textarea></div>
+          <div class="field"><label for="budget">Budget-indicatie</label>
+            <select id="budget" name="budget">
+              <option value="">Selecteer (optioneel)</option>
+              <option>€5.000 – €15.000</option>
+              <option>€15.000 – €30.000</option>
+              <option>€30.000+</option>
+              <option>Weet ik nog niet</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Verstuur aanvraag <span class="arw">→</span></button>
+          <p class="formnote">We nemen binnen 24 uur contact op.</p>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ FOOTER ═══════════ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <div class="footer__logo">&lt;S/&gt; Sircle Solutions</div>
-          <p>Custom software development.<br>Onderdeel van de Sircle Group.</p>
-          <p class="footer__address">Zwaardstraat 16, 2584 TX Den Haag</p>
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="#top" class="brand"><span class="glyph">&lt;S/&gt;</span> Sircle Solutions</a>
+          <p>Custom software development. Onderdeel van de Sircle Group.</p>
+          <p class="addr">Zwaardstraat 16, 2584 TX Den Haag</p>
         </div>
-        <div class="footer__col">
-          <h4>Diensten</h4>
-          <a href="#services">Web Applicaties</a>
-          <a href="#services">Dashboards & Portals</a>
-          <a href="#services">Boekingssystemen</a>
-          <a href="#services">WordPress Plugins</a>
-          <a href="#services">AI & Automatisering</a>
-          <a href="#services">Chatbots & Klantenservice</a>
+        <div class="foot-col">
+          <h5>Diensten</h5>
+          <a href="#diensten">Web Applicaties</a>
+          <a href="#diensten">Dashboards &amp; Portals</a>
+          <a href="#diensten">Boekingssystemen</a>
+          <a href="#diensten">WordPress Plugins</a>
+          <a href="#diensten">AI &amp; Automatisering</a>
         </div>
-        <div class="footer__col">
-          <h4>Sircle Group</h4>
-          <a href="https://sircle.agency" target="_blank">Sircle Agency</a>
-          <a href="https://sircle.dev" target="_blank">Sircle.dev</a>
-          <a href="#">Sircle Solutions</a>
+        <div class="foot-col">
+          <h5>Sircle Group</h5>
+          <a href="https://sircle.agency" target="_blank" rel="noopener">Sircle Agency</a>
+          <a href="https://sircle.dev" target="_blank" rel="noopener">Sircle.dev</a>
+          <a href="#group">Sircle Solutions</a>
         </div>
-        <div class="footer__col">
-          <h4>Contact</h4>
+        <div class="foot-col">
+          <h5>Contact</h5>
           <a href="mailto:hello@sircle.dev">hello@sircle.dev</a>
           <a href="tel:+31852129145">+31 85 212 91 45</a>
-          <a href="https://linkedin.com/company/sirclecreative" target="_blank">LinkedIn</a>
+          <a href="https://linkedin.com/company/sirclecreative" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p>© 2026 Sircle Solutions — KvK 86074016</p>
-        <p>Made with <svg class="footer-heart" width="14" height="14" viewBox="0 0 24 24" fill="#3b82f6" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> in Den Haag</p>
+      <div class="foot-bot">
+        <span>© 2026 Sircle Solutions — KvK 86074016</span>
+        <span>Made with <span class="heart">◆</span> in Den Haag</span>
       </div>
     </div>
   </footer>
 
-  <!-- Project Popup -->
-  <div class="project-popup" id="projectPopup">
-    <div class="project-popup__overlay" id="projectPopupOverlay"></div>
-    <div class="project-popup__container">
-      <div class="project-popup__header">
-        <div>
-          <h3 class="project-popup__title">Start een project</h3>
-          <p class="project-popup__subtitle">Vertel ons over je idee. We nemen binnen 24 uur contact op.</p>
-        </div>
-        <button class="project-popup__close" id="projectPopupClose">
-          <span></span><span></span>
-        </button>
-      </div>
-      <form class="project-popup__form" id="projectForm" action="https://formsubmit.co/hello@sircle.dev" method="POST">
-        <input type="hidden" name="_subject" value="Nieuw project via sirclesolutions.com">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://sirclesolutions.com/?submitted=true">
-        <input type="text" name="_honey" style="display:none">
-        <div class="project-popup__row">
-          <div class="project-popup__field">
-            <label>Naam *</label>
-            <input type="text" name="naam" placeholder="Je naam" required>
-          </div>
-          <div class="project-popup__field">
-            <label>Email *</label>
-            <input type="email" name="email" placeholder="je@bedrijf.nl" required>
-          </div>
-        </div>
-        <div class="project-popup__row">
-          <div class="project-popup__field">
-            <label>Bedrijf</label>
-            <input type="text" name="bedrijf" placeholder="Bedrijfsnaam">
-          </div>
-          <div class="project-popup__field">
-            <label>Type project *</label>
-            <select name="type" required>
-              <option value="" disabled selected>Kies een optie</option>
-              <option value="Web Applicatie">Web Applicatie</option>
-              <option value="Dashboard / Portal">Dashboard / Portal</option>
-              <option value="CRM / Database">CRM / Database</option>
-              <option value="AI / Chatbot">AI / Chatbot</option>
-              <option value="WordPress Plugin">WordPress Plugin</option>
-              <option value="Automatisering">Automatisering</option>
-              <option value="Anders">Anders</option>
-            </select>
-          </div>
-        </div>
-        <div class="project-popup__field">
-          <label>Vertel over je project *</label>
-          <textarea name="beschrijving" placeholder="Wat wil je bouwen? Welk probleem wil je oplossen?" rows="4" required></textarea>
-        </div>
-        <div class="project-popup__field">
-          <label>Budget indicatie</label>
-          <select name="budget">
-            <option value="" disabled selected>Selecteer (optioneel)</option>
-            <option value="< €5.000">< €5.000</option>
-            <option value="€5.000 - €15.000">€5.000 - €15.000</option>
-            <option value="€15.000 - €30.000">€15.000 - €30.000</option>
-            <option value="> €30.000">> €30.000</option>
-            <option value="Weet ik nog niet">Weet ik nog niet</option>
-          </select>
-        </div>
-        <button type="submit" class="project-popup__submit">
-          Verstuur aanvraag <span>→</span>
-        </button>
-      </form>
-    </div>
-  </div>
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+  // --- Nav scroll state ---
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 24);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
-  <script src="js/app.js?v=20260222-2337"></script>
+  // --- Mobile drawer ---
+  const mb = document.getElementById('menuBtn'), dr = document.getElementById('drawer');
+  const toggleMenu = (open) => {
+    mb.classList.toggle('open', open); dr.classList.toggle('open', open);
+    mb.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  mb.addEventListener('click', () => toggleMenu(!dr.classList.contains('open')));
+  dr.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+  // --- Scroll reveal ---
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach((el,i) => {
+    el.style.transitionDelay = Math.min(i%4,3)*70 + 'ms';
+    io.observe(el);
+  });
+
+  // --- Hero constellation ---
+  (function(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canvas = document.getElementById('constellation');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const COLORS = ['#8052ff','#a385ff','#ffb829','#22a58a','#e85ac0','#4a9eff'];
+    let w, h, dpr, nodes = [], cx, cy, R, mouse = {x:-9999, y:-9999, active:false}, t = 0, raf;
+
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = canvas.clientWidth; h = canvas.clientHeight;
+      canvas.width = w*dpr; canvas.height = h*dpr;
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      cx = w * (w < 760 ? 0.5 : 0.72);
+      cy = h * (w < 760 ? 0.40 : 0.5);
+      R  = Math.min(w, h) * (w < 760 ? 0.42 : 0.46);
+      build();
+    }
+
+    function build(){
+      const count = w < 640 ? 70 : w < 1100 ? 110 : 150;
+      nodes = [];
+      for(let i=0;i<count;i++){
+        const u = Math.random(), v = Math.random();
+        const theta = u * Math.PI * 2;
+        const phi = Math.acos(2*v - 1);
+        const rr = R * (0.35 + Math.pow(Math.random(),0.7)*0.72);
+        const sx = Math.sin(phi)*Math.cos(theta);
+        const sy = Math.cos(phi);
+        nodes.push({
+          bx: cx + sx*rr, by: cy + sy*rr*0.92,
+          x:0, y:0,
+          z: 0.4 + Math.random()*0.9,
+          off: Math.random()*Math.PI*2,
+          amp: 6 + Math.random()*16,
+          spd: 0.2 + Math.random()*0.5,
+          col: COLORS[(Math.random()*COLORS.length)|0]
+        });
+      }
+    }
+
+    function frame(){
+      t += 0.006;
+      ctx.clearRect(0,0,w,h);
+      for(const n of nodes){
+        n.x = n.bx + Math.cos(t*n.spd + n.off)*n.amp;
+        n.y = n.by + Math.sin(t*n.spd*1.1 + n.off)*n.amp;
+        if(mouse.active){
+          const dx = n.x - mouse.x, dy = n.y - mouse.y;
+          const d2 = dx*dx + dy*dy;
+          if(d2 < 26000){
+            const f = (26000 - d2)/26000;
+            const d = Math.sqrt(d2)||1;
+            n.x += (dx/d)*f*22; n.y += (dy/d)*f*22;
+          }
+        }
+      }
+      const LINK = w < 640 ? 92 : 116;
+      for(let i=0;i<nodes.length;i++){
+        for(let j=i+1;j<nodes.length;j++){
+          const a=nodes[i], b=nodes[j];
+          const dx=a.x-b.x, dy=a.y-b.y, d2=dx*dx+dy*dy;
+          if(d2 < LINK*LINK){
+            const al = (1 - Math.sqrt(d2)/LINK)*0.22*Math.min(a.z,b.z);
+            ctx.strokeStyle = 'rgba(128,82,255,'+al.toFixed(3)+')';
+            ctx.lineWidth = 0.6;
+            ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+          }
+        }
+      }
+      for(const n of nodes){
+        const s = 1.4 + n.z*2.6;
+        ctx.save();
+        ctx.translate(n.x, n.y);
+        ctx.rotate(t*n.spd + n.off);
+        ctx.globalAlpha = 0.35 + n.z*0.55;
+        ctx.strokeStyle = n.col; ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0,-s); ctx.lineTo(s*0.87, s*0.5); ctx.lineTo(-s*0.87, s*0.5); ctx.closePath();
+        ctx.stroke();
+        if(n.z > 0.9){ ctx.globalAlpha = 0.9; ctx.fillStyle = n.col; ctx.beginPath(); ctx.arc(0,0,0.9,0,7); ctx.fill(); }
+        ctx.restore();
+      }
+      ctx.globalAlpha = 1;
+      raf = requestAnimationFrame(frame);
+    }
+
+    function drawStatic(){
+      for(const n of nodes){ n.x=n.bx; n.y=n.by; }
+      ctx.clearRect(0,0,w,h);
+      for(const n of nodes){
+        ctx.globalAlpha = 0.3 + n.z*0.5; ctx.strokeStyle=n.col; ctx.lineWidth=1;
+        const s=1.4+n.z*2.6;
+        ctx.beginPath(); ctx.moveTo(n.x,n.y-s); ctx.lineTo(n.x+s*0.87,n.y+s*0.5); ctx.lineTo(n.x-s*0.87,n.y+s*0.5); ctx.closePath(); ctx.stroke();
+      }
+      ctx.globalAlpha=1;
+    }
+
+    function start(){ cancelAnimationFrame(raf); if(reduce){ drawStatic(); } else { raf = requestAnimationFrame(frame); } }
+
+    window.addEventListener('mousemove', e => {
+      const r = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.active = true;
+    });
+    window.addEventListener('mouseout', () => mouse.active = false);
+    let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(()=>{ resize(); start(); }, 150); });
+
+    const heroEl = document.querySelector('.hero');
+    new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ if(!reduce) start(); } else { cancelAnimationFrame(raf); } }); }, {threshold:0}).observe(heroEl);
+
+    resize(); start();
+  })();
+  </script>
+
+  <!-- Fathom analytics -->
+  <script src="https://cdn.usefathom.com/script.js" data-site="ONXKQQZM" defer></script>
 </body>
 </html>
