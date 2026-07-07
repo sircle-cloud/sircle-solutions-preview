@@ -353,6 +353,11 @@
     .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:start}
     .contact h2{font-size:clamp(36px,5.6vw,72px);letter-spacing:-.045em}
     .contact .lede{margin-top:22px;color:var(--muted);font-size:17px;max-width:40ch}
+    .form-success{display:flex;align-items:center;gap:16px;margin-bottom:40px;padding:20px 24px;border-radius:16px;border:1px solid rgba(143,175,138,.35);background:linear-gradient(150deg,rgba(63,111,69,.22),rgba(11,22,15,.4));animation:fsIn .6s var(--ease) both}
+    .form-success .fs-ico{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;color:#0a1a0f;background:linear-gradient(135deg,#D0DFB9,#8FAF8A)}
+    .form-success strong{display:block;font-family:var(--display);font-size:18px;font-weight:600;color:var(--warm-white);letter-spacing:-.01em}
+    .form-success span{display:block;color:var(--beige);font-size:14.5px;margin-top:2px}
+    @keyframes fsIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
     .contact-direct{margin-top:38px;display:flex;flex-direction:column;gap:12px}
     .cd{display:flex;align-items:center;gap:15px;padding:14px 16px;border:1px solid var(--hair-soft);border-radius:14px;transition:border-color .3s,background .3s,transform .3s var(--ease)}
     .cd:hover{border-color:rgba(242,226,164,.3);background:rgba(242,226,164,.04);transform:translateX(3px)}
@@ -781,6 +786,10 @@
   <!-- ============ CONTACT ============ -->
   <section class="sec divide contact" id="contact">
     <div class="wrap">
+      <div class="form-success" id="formSuccess" hidden>
+        <span class="fs-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg></span>
+        <div><strong>Bedankt! Je aanvraag is verstuurd.</strong><span>We nemen binnen 24 uur contact met je op.</span></div>
+      </div>
       <div class="contact-grid">
         <div class="reveal">
           <h2>Vertel ons je uitdaging.</h2>
@@ -884,6 +893,20 @@
   const toggleMenu = (open) => { mb.classList.toggle('open',open); dr.classList.toggle('open',open); mb.setAttribute('aria-expanded',open); document.body.style.overflow = open?'hidden':''; };
   mb.addEventListener('click', () => toggleMenu(!dr.classList.contains('open')));
   dr.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+  // --- Formulier-bevestiging na verzenden (?submitted=true) ---
+  (function(){
+    const params = new URLSearchParams(window.location.search);
+    if(!params.has('submitted')) return;
+    const banner = document.getElementById('formSuccess');
+    if(banner){
+      banner.hidden = false;
+      // schoon de URL op zodat een refresh de melding niet opnieuw toont
+      history.replaceState(null, '', window.location.pathname + window.location.hash);
+      // scroll naar het contactblok
+      setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth', block:'start'}), 300);
+    }
+  })();
 
   // --- Scroll reveals + smooth scroll (GSAP/Lenis met nette fallback) ---
   (function(){
