@@ -148,13 +148,20 @@
 
     /* ---------- Sections ---------- */
     section{position:relative}
-    .sec{padding:clamp(88px,12vh,140px) 0}
-    .sec-head{max-width:64ch;margin-bottom:56px}
+    .sec{padding:clamp(120px,18vh,220px) 0}
+    .sec-head{max-width:64ch;margin-bottom:clamp(56px,7vh,88px)}
     .sec-head h2{font-size:clamp(33px,5.2vw,66px);margin-top:0;letter-spacing:-.04em}
     .sec-head p{margin-top:20px;max-width:52ch;color:var(--muted);font-size:clamp(15.5px,1.8vw,18px)}
     .divide{border-top:1px solid var(--hair)}
 
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+    /* when GSAP drives the reveals, disable the CSS transition to avoid double-animating */
+    html.gsap-on .reveal{transition:none}
+    /* Lenis smooth scroll */
+    html.lenis,html.lenis body{height:auto}
+    .lenis.lenis-smooth{scroll-behavior:auto!important}
+    .lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+    .lenis.lenis-stopped{overflow:hidden}
     .reveal.in{opacity:1;transform:none}
 
     /* card base */
@@ -254,6 +261,14 @@
     .pprice{font-family:var(--display);font-size:15px;font-weight:600;color:var(--gold)}
     .pprice s{color:var(--muted-dim);font-size:11px;font-weight:400;margin-left:4px}
     .pbadge{position:absolute;top:8px;right:8px;font-family:var(--mono);font-size:9px;font-weight:600;color:#0a1a0f;background:var(--grad-gold);border-radius:6px;padding:2px 6px}
+    /* DB records */
+    .mock-db{flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:7px}
+    .dbrow{display:grid;grid-template-columns:1.6fr 1fr 1fr .7fr;gap:10px;align-items:center;padding:9px 11px;border:1px solid var(--hair-soft);border-radius:8px;background:rgba(255,248,238,.02)}
+    .dbrow.head{background:transparent;border:none;padding:0 11px}
+    .dbrow.head span{font-family:var(--mono);font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-dim)}
+    .dbcell{height:8px;border-radius:4px;background:rgba(255,248,238,.09)}
+    .dbcell.a{width:82%}.dbcell.b{width:58%}
+    .dbtag{justify-self:start;font-family:var(--mono);font-size:9px;color:var(--soft-green);border:1px solid rgba(143,175,138,.3);border-radius:5px;padding:2px 7px;background:rgba(63,111,69,.14)}
     @media(max-width:860px){.proj{grid-template-columns:1fr;gap:28px}.proj.rev .proj-visual{order:-1}}
 
     /* ---------- Cascading slider ---------- */
@@ -426,7 +441,7 @@
           <a href="#portfolio" class="btn btn-ghost">Bekijk wat we bouwen</a>
         </div>
         <div class="hero-meta">
-          <span class="m"><b>7+</b> jaar bouwen</span>
+          <span class="m"><b>Datamanagement</b> databases &amp; migraties</span>
           <span class="m"><b>2 weken</b> tot werkend prototype</span>
           <span class="m"><b>Den Haag</b> · remote in heel NL</span>
         </div>
@@ -489,9 +504,9 @@
         </div>
         <div class="card svc-card reveal">
           <div class="top"><div class="ico"><svg><use href="#i-db"/></svg></div><span class="num">04</span></div>
-          <h3>Database Systemen</h3>
-          <p>Op maat gemaakte CRM's, inventaris- en datamanagement. Jouw data, jouw structuur, jouw regels.</p>
-          <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQLite</span><span class="tag">API</span></div>
+          <h3>Databases &amp; Datamanagement</h3>
+          <p>Ons specialisme: robuuste databases bouwen, data-migraties uitvoeren en beheer inrichten. Van CRM's tot grootschalige registers — jouw data, jouw structuur, veilig en schaalbaar.</p>
+          <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">Migraties</span><span class="tag">Databeheer</span><span class="tag">API</span></div>
         </div>
         <div class="card svc-card reveal">
           <div class="top"><div class="ico"><svg><use href="#i-plugin"/></svg></div><span class="num">05</span></div>
@@ -652,6 +667,32 @@
             </div>
           </a>
         </article>
+        <article class="slide" tabindex="0" aria-label="Fit in Wassenaar — Database">
+          <a class="slide-card" href="werk/fit-wassenaar.html">
+            <div class="proj-visual"><div class="mock">
+              <div class="mock-bar"><i></i><i></i><i></i><span>fit-wassenaar.nl · Database</span></div>
+              <div class="mock-body" style="padding:0">
+                <div class="mock-row" style="padding:14px 16px 0">
+                  <div class="mock-kpi"><div class="lab">Records</div><div class="val">2.400+</div></div>
+                  <div class="mock-kpi"><div class="lab">Migratie</div><div class="val">100%</div></div>
+                  <div class="mock-kpi"><div class="lab">Uptime</div><div class="val">99.9%</div></div>
+                </div>
+                <div class="mock-db">
+                  <div class="dbrow head"><span>Naam</span><span>Categorie</span><span>Wijk</span><span>Status</span></div>
+                  <div class="dbrow"><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
+                  <div class="dbrow"><span class="dbcell b"></span><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
+                  <div class="dbrow"><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbcell a"></span><span class="dbtag">Actief</span></div>
+                  <div class="dbrow"><span class="dbcell b"></span><span class="dbcell b"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
+                </div>
+              </div>
+            </div></div>
+            <div class="slide-overlay">
+              <span class="kicker">Database · <span class="live">Live</span></span>
+              <h3>Fit in Wassenaar</h3>
+              <span class="go">Bekijk project <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
       </div>
     </div>
     <div class="wrap"><div class="s-dots" id="sDots"></div></div>
@@ -799,6 +840,10 @@
   </footer>
 
   <!-- ============ SCRIPTS ============ -->
+  <!-- GSAP + ScrollTrigger + Lenis (voor subtiele scroll-animaties & smooth scroll) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
   const hdr = document.getElementById('hdr');
   const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 24);
@@ -809,8 +854,54 @@
   mb.addEventListener('click', () => toggleMenu(!dr.classList.contains('open')));
   dr.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
 
-  const io = new IntersectionObserver((es) => { es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal').forEach((el,i) => { el.style.transitionDelay = Math.min(i%3,2)*80 + 'ms'; io.observe(el); });
+  // --- Scroll reveals + smooth scroll (GSAP/Lenis met nette fallback) ---
+  (function(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasGSAP = window.gsap && window.ScrollTrigger;
+
+    if(!hasGSAP || reduce){
+      // Fallback: IntersectionObserver reveals
+      const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.1, rootMargin:'0px 0px -6% 0px'});
+      document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=Math.min(i%3,2)*70+'ms'; io.observe(el); });
+      return;
+    }
+
+    document.documentElement.classList.add('gsap-on');
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Lenis smooth scroll
+    let lenis=null;
+    if(window.Lenis){
+      lenis=new Lenis({lerp:0.11, wheelMultiplier:1, smoothWheel:true});
+      lenis.on('scroll',ScrollTrigger.update);
+      gsap.ticker.add((t)=>lenis.raf(t*1000));
+      gsap.ticker.lagSmoothing(0);
+      // nav-anchors smooth via Lenis
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',e=>{
+          const id=a.getAttribute('href');
+          if(id.length>1){ const t=document.querySelector(id); if(t){ e.preventDefault(); lenis.scrollTo(t,{offset:-10,duration:1.1}); } }
+        });
+      });
+    }
+
+    // Batched reveal animations, staggered per group as they enter
+    gsap.set('.reveal',{opacity:0,y:26});
+    ScrollTrigger.batch('.reveal',{
+      start:'top 88%',
+      onEnter:b=>gsap.to(b,{opacity:1,y:0,duration:.9,ease:'power3.out',stagger:0.11,overwrite:true})
+    });
+
+    // Subtle hero parallax: content drifts up + fades as you scroll past
+    gsap.to('.hero-inner',{yPercent:-14,opacity:0.35,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    // Section headings: a touch of extra travel for depth
+    gsap.utils.toArray('.sec-head h2').forEach(h=>{
+      gsap.fromTo(h,{y:18},{y:-18,ease:'none',scrollTrigger:{trigger:h,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+
+    ScrollTrigger.refresh();
+    window.addEventListener('load',()=>ScrollTrigger.refresh());
+  })();
 
   // --- Hero: 3D rotating point-globe ---
   (function(){
