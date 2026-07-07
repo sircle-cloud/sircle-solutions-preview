@@ -283,6 +283,7 @@
     .slide .proj-visual::after{display:none}
     .slide .mock{position:absolute;inset:0}
     .slide .mock-shot{height:100%}
+    .slide .cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
     .slide-overlay{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:clamp(20px,3vw,34px);background:linear-gradient(transparent,rgba(6,13,8,.5) 26%,rgba(6,13,8,.95))}
     .slide-overlay .kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--beige)}
     .slide-overlay .kicker .status{color:var(--gold);font-weight:600}
@@ -590,7 +591,7 @@
           <a class="slide-card" href="werk/vlijt.html">
             <div class="proj-visual"><div class="mock">
               <div class="mock-bar"><i></i><i></i><i></i><span>crm.vlijt.nl</span></div>
-              <img class="mock-shot" src="./assets/portfolio/vlijt-crm-pipeline.jpg" alt="VLIJT Tandartsen CRM patiënt-pipeline" loading="lazy">
+              <img class="mock-shot" src="./assets/portfolio/vlijt-crm-pipeline.jpg" alt="VLIJT CRM patiënt-pipeline" loading="lazy">
             </div></div>
             <div class="slide-overlay">
               <span class="kicker">Custom CRM-portal · <span class="status">VLIJT Tandartsen</span></span>
@@ -599,51 +600,30 @@
             </div>
           </a>
         </article>
-        <article class="slide" tabindex="0" aria-label="ORBIT">
-          <a class="slide-card" href="werk/orbit.html">
-            <div class="proj-visual"><div class="mock">
-              <div class="mock-bar"><i></i><i></i><i></i><span>orbit.app · Projecten</span></div>
-              <div class="mock-body" style="padding:0">
-                <div class="mock-row" style="padding:14px 16px 0">
-                  <div class="mock-kpi"><div class="lab">Projecten</div><div class="val">18</div></div>
-                  <div class="mock-kpi"><div class="lab">Omzet</div><div class="val">&euro;94k</div></div>
-                  <div class="mock-kpi"><div class="lab">Team</div><div class="val">7</div></div>
-                </div>
-                <div class="mock-kanban">
-                  <div class="kcol"><span class="kh">Te doen</span><div class="kcard"></div><div class="kcard"></div><div class="kcard"></div></div>
-                  <div class="kcol"><span class="kh">Bezig</span><div class="kcard hi"></div><div class="kcard"></div></div>
-                  <div class="kcol"><span class="kh">Klaar</span><div class="kcard"></div><div class="kcard"></div></div>
-                </div>
-              </div>
-            </div></div>
+        <article class="slide" tabindex="0" aria-label="Fit in Wassenaar — Platform en database">
+          <a class="slide-card" href="werk/fit-wassenaar.html">
+            <div class="proj-visual"><img class="cover-img" src="./assets/portfolio/fiw-database.jpg" alt="Fit in Wassenaar platform — interactieve kaart-database" loading="lazy"></div>
             <div class="slide-overlay">
-              <span class="kicker">In-house SaaS · <span class="status">Coming soon</span></span>
-              <h3>ORBIT</h3>
+              <span class="kicker">Platform &amp; Database · <span class="status">Gemeente Wassenaar</span></span>
+              <h3>Fit in Wassenaar</h3>
               <span class="go">Bekijk project <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
           </a>
         </article>
-        <article class="slide" tabindex="0" aria-label="Proposly">
-          <a class="slide-card" href="werk/proposly.html">
+        <article class="slide" tabindex="0" aria-label="Breinwijzers — Maatwerk boekingsplatform">
+          <a class="slide-card" href="werk/breinwijzers.html">
             <div class="proj-visual"><div class="mock">
-              <div class="mock-bar"><i></i><i></i><i></i><span>proposly.io · Nieuwe offerte</span></div>
-              <div class="mock-wizard">
-                <div class="wsteps"><span class="ws done">1</span><span class="wl"></span><span class="ws done">2</span><span class="wl"></span><span class="ws done">3</span><span class="wl"></span><span class="ws active">4</span><span class="wl"></span><span class="ws">5</span><span class="wl"></span><span class="ws">6</span></div>
-                <div class="wdoc">
-                  <div class="wline lg"></div>
-                  <div class="wline"></div><div class="wline"></div><div class="wline sh"></div>
-                  <div class="wline"></div><div class="wline sh"></div>
-                </div>
-              </div>
+              <div class="mock-bar"><i></i><i></i><i></i><span>boeken.breinwijzers.nl</span></div>
+              <img class="mock-shot" src="./assets/portfolio/breinwijzers-airtable.jpg" alt="Breinwijzers boekingsplatform" loading="lazy">
             </div></div>
             <div class="slide-overlay">
-              <span class="kicker">SaaS Product · <span class="status">Coming soon</span></span>
-              <h3>Proposly</h3>
+              <span class="kicker">Maatwerk boekingsplatform · <span class="status">Breinwijzers</span></span>
+              <h3>Calendly, maar dan op maat.</h3>
               <span class="go">Bekijk project <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
           </a>
         </article>
-        <article class="slide" tabindex="0" aria-label="22Q-minded">
+        <article class="slide" tabindex="0" aria-label="22Q-minded — WooCommerce plugin">
           <a class="slide-card" href="werk/22q.html">
             <div class="proj-visual"><div class="mock">
               <div class="mock-bar"><i></i><i></i><i></i><span>shop · 22qminded.com</span></div>
@@ -667,28 +647,46 @@
             </div>
           </a>
         </article>
-        <article class="slide" tabindex="0" aria-label="Fit in Wassenaar — Database">
-          <a class="slide-card" href="werk/fit-wassenaar.html">
+        <article class="slide" tabindex="0" aria-label="ORBIT — All-in-one SaaS">
+          <a class="slide-card" href="werk/orbit.html">
             <div class="proj-visual"><div class="mock">
-              <div class="mock-bar"><i></i><i></i><i></i><span>fit-wassenaar.nl · Database</span></div>
+              <div class="mock-bar"><i></i><i></i><i></i><span>orbit.app · Projecten</span></div>
               <div class="mock-body" style="padding:0">
                 <div class="mock-row" style="padding:14px 16px 0">
-                  <div class="mock-kpi"><div class="lab">Records</div><div class="val">2.400+</div></div>
-                  <div class="mock-kpi"><div class="lab">Migratie</div><div class="val">100%</div></div>
-                  <div class="mock-kpi"><div class="lab">Uptime</div><div class="val">99.9%</div></div>
+                  <div class="mock-kpi"><div class="lab">Projecten</div><div class="val">18</div></div>
+                  <div class="mock-kpi"><div class="lab">Omzet</div><div class="val">&euro;94k</div></div>
+                  <div class="mock-kpi"><div class="lab">Team</div><div class="val">7</div></div>
                 </div>
-                <div class="mock-db">
-                  <div class="dbrow head"><span>Naam</span><span>Categorie</span><span>Wijk</span><span>Status</span></div>
-                  <div class="dbrow"><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
-                  <div class="dbrow"><span class="dbcell b"></span><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
-                  <div class="dbrow"><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbcell a"></span><span class="dbtag">Actief</span></div>
-                  <div class="dbrow"><span class="dbcell b"></span><span class="dbcell b"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
+                <div class="mock-kanban">
+                  <div class="kcol"><span class="kh">Te doen</span><div class="kcard"></div><div class="kcard"></div><div class="kcard"></div></div>
+                  <div class="kcol"><span class="kh">Bezig</span><div class="kcard hi"></div><div class="kcard"></div></div>
+                  <div class="kcol"><span class="kh">Klaar</span><div class="kcard"></div><div class="kcard"></div></div>
                 </div>
               </div>
             </div></div>
             <div class="slide-overlay">
-              <span class="kicker">Database · <span class="live">Live</span></span>
-              <h3>Fit in Wassenaar</h3>
+              <span class="kicker">In-house SaaS · <span class="status">Coming soon</span></span>
+              <h3>ORBIT</h3>
+              <span class="go">Bekijk project <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </article>
+        <article class="slide" tabindex="0" aria-label="Proposly — AI offerte-tool">
+          <a class="slide-card" href="werk/proposly.html">
+            <div class="proj-visual"><div class="mock">
+              <div class="mock-bar"><i></i><i></i><i></i><span>proposly.io · Nieuwe offerte</span></div>
+              <div class="mock-wizard">
+                <div class="wsteps"><span class="ws done">1</span><span class="wl"></span><span class="ws done">2</span><span class="wl"></span><span class="ws done">3</span><span class="wl"></span><span class="ws active">4</span><span class="wl"></span><span class="ws">5</span><span class="wl"></span><span class="ws">6</span></div>
+                <div class="wdoc">
+                  <div class="wline lg"></div>
+                  <div class="wline"></div><div class="wline"></div><div class="wline sh"></div>
+                  <div class="wline"></div><div class="wline sh"></div>
+                </div>
+              </div>
+            </div></div>
+            <div class="slide-overlay">
+              <span class="kicker">SaaS Product · <span class="status">Coming soon</span></span>
+              <h3>Proposly</h3>
               <span class="go">Bekijk project <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
           </a>

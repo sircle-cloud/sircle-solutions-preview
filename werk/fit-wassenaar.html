@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fit in Wassenaar — Database · Sircle Solutions</title>
-  <meta name="description" content="Een schaalbare database voor het beweeg- en gezondheidsaanbod in Wassenaar: datastructuur, migratie en beheer op maat.">
+  <title>Fit in Wassenaar — Platform & Database · Sircle Solutions</title>
+  <meta name="description" content="Het centrale platform en de database van het preventie-programma van de Gemeente Wassenaar.">
   <meta name="theme-color" content="#060D08">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -15,75 +15,71 @@
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
-    <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14-4M4 5v4h4M4 13a8 8 0 0 0 14 4M20 19v-4h-4"/></symbol>
+    <symbol id="i-kanban" viewBox="0 0 24 24"><rect x="4" y="4" width="4.5" height="16" rx="1.2"/><rect x="10" y="4" width="4.5" height="11" rx="1.2"/><rect x="16" y="4" width="4.5" height="14" rx="1.2"/></symbol>
     <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M12 21s-6-5.4-6-10a6 6 0 0 1 12 0c0 4.6-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></symbol>
+    <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14-4M4 5v4h4M4 13a8 8 0 0 0 14 4M20 19v-4h-4"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-community" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="7" r="2.4"/><path d="M15.5 13.2A5 5 0 0 1 21 18"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M7 8h10v3a5 5 0 0 1-10 0zM12 16v6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
     <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-steps" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1.2"/><circle cx="4" cy="12" r="1.2"/><circle cx="4" cy="18" r="1.2"/></symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></symbol>
   </defs></svg>
-
   <div class="wtop"><div class="wrap in">
     <a href="../" class="brand"><span class="glyph">&lt;S/&gt;</span> Sircle Solutions</a>
     <a href="../#portfolio" class="back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Terug naar portfolio</a>
   </div></div>
 
   <header class="whero"><div class="wrap">
-    <span class="kicker reveal">Database &amp; Datamanagement · <span class="live">Live</span></span>
+    <span class="kicker reveal">Platform &amp; Database · <span class="status">Gemeente Wassenaar</span></span>
     <h1 class="reveal">Fit in <span class="gold-text">Wassenaar.</span></h1>
-    <p class="lede reveal">Een centrale database voor het beweeg- en gezondheidsaanbod in Wassenaar. Wij brachten verspreide data samen tot één betrouwbaar, doorzoekbaar register — de fundering om op door te bouwen.</p>
-    <div class="meta reveal"><span class="m"><b>2.400+</b> Records</span><span class="m"><b>100%</b> Migratie</span><span class="m"><b>99.9%</b> Uptime</span></div>
+    <p class="lede reveal">Het centrale platform van het preventie-programma van de Gemeente Wassenaar. Eén grote database die het complete lokale aanbod ontsluit — van sport en beweging tot ondersteuning en mentale gezondheid.</p>
+    <div class="meta reveal"><span class="m"><b>2023</b> Partner sinds</span><span class="m"><b>Live</b> Status</span><span class="m"><b>Maatwerk</b> CMS</span></div>
     <div class="cta reveal">
       <a href="../#contact" class="btn btn-primary">Start een dataproject <svg class="arw" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="https://fitwassenaar.nl" target="_blank" rel="noopener" class="btn btn-ghost">Bekijk live <svg class="arw" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div></header>
 
   <section class="shots"><div class="wrap">
-    <div class="mockbox reveal"><div class="mock">
-      <div class="mock-bar"><i></i><i></i><i></i><span>fit-wassenaar.nl · Database</span></div>
-      <div class="mock-body">
-        <div class="mock-row">
-          <div class="mock-kpi"><div class="lab">Records</div><div class="val">2.400+</div></div>
-          <div class="mock-kpi"><div class="lab">Migratie</div><div class="val">100%</div></div>
-          <div class="mock-kpi"><div class="lab">Uptime</div><div class="val">99.9%</div></div>
-        </div>
-        <div class="mock-db">
-          <div class="dbrow head"><span>Naam</span><span>Categorie</span><span>Wijk</span><span>Status</span></div>
-          <div class="dbrow"><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
-          <div class="dbrow"><span class="dbcell b"></span><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
-          <div class="dbrow"><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbcell a"></span><span class="dbtag">Actief</span></div>
-          <div class="dbrow"><span class="dbcell b"></span><span class="dbcell b"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
-          <div class="dbrow"><span class="dbcell a"></span><span class="dbcell a"></span><span class="dbcell b"></span><span class="dbtag">Actief</span></div>
-        </div>
-      </div>
-    </div></div>
+    <div class="shot-photo reveal"><img src="../assets/portfolio/fiw-database.jpg" alt="Fit in Wassenaar platform — interactieve kaart-database van het lokale aanbod" loading="lazy"></div>
   </div></section>
 
-  <section class="wsec"><div class="wrap wcols">
-    <div class="reveal">
-      <h2>De uitdaging</h2>
-      <p>Het aanbod en de bijbehorende data zaten verspreid over losse lijsten en systemen. Geen eenduidige bron, lastig te onderhouden en niet schaalbaar.</p>
-      <p>Wij ontwierpen een schone datastructuur, voerden de migratie van de bestaande data uit en richtten het beheer in — betrouwbaar, veilig en klaar voor uitbreiding.</p>
-      <p style="color:var(--gold)">In het verlengde hiervan bouwen we nu, samen met de Gemeente Wassenaar, een database rond het mentale-gezondheidsaanbod — op dezelfde fundering.</p>
-    </div>
-    <div class="reveal">
-      <h2 style="margin-bottom:28px">Wat we bouwden</h2>
-      <div class="feat">
-        <div class="f"><div class="ico"><svg><use href="#i-db"/></svg></div><div><h4>Schaalbare datastructuur</h4><p>Een schone, genormaliseerde database die meegroeit met het aanbod.</p></div></div>
-        <div class="f"><div class="ico"><svg><use href="#i-sync"/></svg></div><div><h4>Data-migratie</h4><p>Bestaande, verspreide data betrouwbaar overgezet naar één bron.</p></div></div>
-        <div class="f"><div class="ico"><svg><use href="#i-chart"/></svg></div><div><h4>Doorzoeken &amp; rapporteren</h4><p>Filteren, koppelen en inzicht per categorie en wijk.</p></div></div>
-        <div class="f"><div class="ico"><svg><use href="#i-lock"/></svg></div><div><h4>Beheer &amp; toegang</h4><p>Ingericht databeheer met rollen en veilige toegang.</p></div></div>
-      </div>
+  <section class="wsec"><div class="wrap">
+    <div class="psr">
+      <div class="psr-col reveal"><span class="n">01 · Probleem</span><h3>De uitdaging</h3><p>Inwoners zochten overzicht, de gemeente wilde verbinden. Het lokale aanbod zat versnipperd — moeilijk vindbaar voor de inwoner en lastig te onderhouden voor organisaties.</p></div>
+      <div class="psr-col sol reveal"><span class="n">02 · Oplossing</span><h3>Wat we bouwden</h3><p>Een interactieve database met kaart, waarmee Wassenaarders zelf ontdekken wat er voor hen te doen is — gefilterd op programma, doelgroep en aanbod. In een gebruiksvriendelijk maatwerk-CMS beheren organisaties hun eigen profiel.</p></div>
+      <div class="psr-col res reveal"><span class="n">03 · Resultaat</span><h3>De impact</h3><p>Eén centraal platform (fitwassenaar.nl) dat inwoners én organisaties verbindt. Het aanbod groeit organisch en het platform breidt door rond mentale gezondheid.</p></div>
     </div>
   </div></section>
 
   <section class="wsec"><div class="wrap">
-    <h2 class="reveal" style="font-size:clamp(24px,3.4vw,40px)">Resultaat</h2>
-    <div class="stats reveal"><div class="s"><b>2.400+</b><span>Records</span></div><div class="s"><b>100%</b><span>Migratie geslaagd</span></div><div class="s"><b>99.9%</b><span>Uptime</span></div><div class="s"><b>Live</b><span>In gebruik</span></div></div>
-    <div class="techrow reveal"><span class="tag">PostgreSQL</span><span class="tag">Node.js</span><span class="tag">Data-migratie</span><span class="tag">API</span><span class="tag">Cloudflare</span></div>
+    <h2 class="reveal" style="font-size:clamp(24px,3.4vw,40px);margin-bottom:36px">Unieke features</h2>
+    <div class="featgrid reveal">
+        <div class="feat-card"><div class="ico"><svg><use href="#i-map"/></svg></div><h4>Interactieve kaart</h4><p>Het volledige aanbod doorzoekbaar op een kaart van heel Wassenaar.</p></div>
+        <div class="feat-card"><div class="ico"><svg><use href="#i-db"/></svg></div><h4>Grote database</h4><p>Het complete lokale aanbod ontsloten in één betrouwbare bron.</p></div>
+        <div class="feat-card"><div class="ico"><svg><use href="#i-grid"/></svg></div><h4>Maatwerk-CMS</h4><p>Organisaties beheren zelf hun profiel en aanbod.</p></div>
+        <div class="feat-card"><div class="ico"><svg><use href="#i-community"/></svg></div><h4>Voor iedereen</h4><p>Sport, beweging, ondersteuning én mentale gezondheid.</p></div>
+    </div>
+  </div></section>
+
+  <section class="wsec"><div class="wrap">
+    <h2 class="reveal" style="font-size:clamp(24px,3.4vw,40px)">Resultaat in cijfers</h2>
+    <div class="stats reveal"><div class="s"><b>2023</b><span>Partner sinds</span></div><div class="s"><b>Live</b><span>fitwassenaar.nl</span></div><div class="s"><b>Kaart</b><span>Interactief</span></div><div class="s"><b>Maatwerk</b><span>CMS</span></div></div>
+    <div class="techrow reveal"><span class="tag">Website &amp; Database</span><span class="tag">Maatwerk CMS</span><span class="tag">Interactieve kaart</span><span class="tag">API</span></div>
   </div></section>
 
   <section class="wcta"><div class="wrap in">
     <h2>Data op orde voor <span class="gold-text">jouw organisatie?</span></h2>
-    <p>Databases bouwen, migreren en beheren is ons specialisme. Vertel ons je uitdaging.</p>
+    <p>Databases bouwen, migreren en ontsluiten is ons specialisme. Vertel ons je uitdaging.</p>
     <div class="cta">
       <a href="../#contact" class="btn btn-primary">Plan een gesprek <svg class="arw" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="../#portfolio" class="btn btn-ghost">Meer projecten</a>

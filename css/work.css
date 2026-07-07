@@ -67,6 +67,29 @@ h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.03;letter-spac
 .shots-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
 @media(max-width:820px){.shots-grid{grid-template-columns:1fr}}
 
+/* photo-only visual (geen browserchrome) */
+.shot-photo{border:1px solid var(--hair);border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -50px rgba(0,0,0,.95);margin-bottom:22px}
+.shot-photo img{width:100%;display:block}
+
+/* Probleem → Oplossing → Resultaat */
+.psr{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.psr-col{padding-top:24px;border-top:2px solid var(--hair)}
+.psr-col.sol{border-top-color:var(--bronze)}
+.psr-col.res{border-top-color:var(--gold)}
+.psr-col .n{font-family:var(--mono);font-size:11px;color:var(--copper);letter-spacing:.12em;text-transform:uppercase}
+.psr-col h3{font-size:22px;margin:12px 0 14px;letter-spacing:-.02em}
+.psr-col p{color:var(--muted);font-size:15px;line-height:1.65}
+@media(max-width:820px){.psr{grid-template-columns:1fr;gap:22px}}
+
+/* unieke features als cards */
+.featgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+.feat-card{border:1px solid var(--hair-soft);border-radius:16px;padding:26px 24px;background:linear-gradient(170deg,var(--forest-2),var(--panel));transition:border-color .35s,transform .35s var(--ease)}
+.feat-card:hover{border-color:rgba(242,226,164,.22);transform:translateY(-3px)}
+.feat-card .ico{margin-bottom:16px}
+.feat-card h4{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.feat-card p{margin-top:8px;color:var(--muted);font-size:14.5px;line-height:1.6}
+@media(max-width:620px){.featgrid{grid-template-columns:1fr}}
+
 /* content */
 .wsec{padding:clamp(72px,12vh,140px) 0;border-top:1px solid var(--hair)}
 .wcols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
